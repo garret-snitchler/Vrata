@@ -81,6 +81,26 @@
       "name": "/actions/mixedreality/in/ExternalCamera",
       "type": "pose",
       "requirement": "optional"
+    },
+    {
+      "name": "/actions/TestSet/in/HitA",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/TestSet/in/HitB",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/TestSet/in/HitX",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/TestSet/in/HitY",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/TestSet/in/DoubleClickA",
+      "type": "boolean"
     }
   ],
   "action_sets": [
@@ -99,6 +119,10 @@
     {
       "name": "/actions/mixedreality",
       "usage": "single"
+    },
+    {
+      "name": "/actions/TestSet",
+      "usage": "leftright"
     }
   ],
   "default_bindings": [
