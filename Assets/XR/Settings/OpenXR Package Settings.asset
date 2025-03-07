@@ -728,13 +728,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f0ebc320a151d3408ea1e9fce54d40e, type: 3}
   m_Name: OpenXR Package Settings
   m_EditorClassIdentifier: 
-  Keys: 01000000040000000d0000000e00000007000000
+  Keys: 01000000040000000d0000000e000000
   Values:
   - {fileID: 6304487515371375009}
   - {fileID: -4055199907884419508}
   - {fileID: 2868802130130321271}
   - {fileID: -8045316858060752704}
-  - {fileID: 7413610126147210582}
 --- !u!114 &101540672611459216
 MonoBehaviour:
   m_ObjectHideFlags: 0
