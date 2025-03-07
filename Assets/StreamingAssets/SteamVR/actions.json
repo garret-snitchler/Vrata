@@ -87,23 +87,47 @@
       "requirement": "optional"
     },
     {
-      "name": "/actions/TestSet/in/HitA",
+      "name": "/actions/CustomSet/in/HitA",
       "type": "boolean"
     },
     {
-      "name": "/actions/TestSet/in/HitB",
+      "name": "/actions/CustomSet/in/HitB",
       "type": "boolean"
     },
     {
-      "name": "/actions/TestSet/in/HitX",
+      "name": "/actions/CustomSet/in/HitX",
       "type": "boolean"
     },
     {
-      "name": "/actions/TestSet/in/HitY",
+      "name": "/actions/CustomSet/in/HitY",
       "type": "boolean"
     },
     {
-      "name": "/actions/TestSet/in/DoubleClickA",
+      "name": "/actions/CustomSet/in/DoubleClickA",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/CustomSet/in/RightTrigger",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/CustomSet/in/LeftTrigger",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/CustomSet/in/RightJoystick",
+      "type": "vector2"
+    },
+    {
+      "name": "/actions/CustomSet/in/LeftJoystick",
+      "type": "vector2"
+    },
+    {
+      "name": "/actions/CustomSet/in/LeftGrip",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/CustomSet/in/RightGrip",
       "type": "boolean"
     }
   ],
@@ -125,7 +149,7 @@
       "usage": "single"
     },
     {
-      "name": "/actions/TestSet",
+      "name": "/actions/CustomSet",
       "usage": "leftright"
     }
   ],

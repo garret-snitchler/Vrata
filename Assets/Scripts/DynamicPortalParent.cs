@@ -10,19 +10,19 @@ public class DynamicPortalParent : MonoBehaviour
     public Material bluePortal;
     public Material purplePortal;
 
-    public GameObject entryPortal;
-    public GameObject exitPortal;
-    public DynamicPortal entryPortalScript;
-    public DynamicPortal exitPortalScript;
+    public GameObject leftPortal;
+    public GameObject rightPortal;
+    public DynamicPortal leftPortalScript;
+    public DynamicPortal rightPortalScript;
 
     private bool isOneTimeUse = true; 
 
     public void GetObjects()
     {
-        this.entryPortal = this.gameObject.transform.GetChild(0).gameObject;
-        this.exitPortal = this.gameObject.transform.GetChild(1).gameObject;
-        this.entryPortalScript = entryPortal.GetComponent<DynamicPortal>();
-        this.exitPortalScript = exitPortal.GetComponent<DynamicPortal>();
+        this.leftPortal = this.gameObject.transform.GetChild(0).gameObject;
+        this.rightPortal = this.gameObject.transform.GetChild(1).gameObject;
+        this.leftPortalScript = leftPortal.GetComponent<DynamicPortal>();
+        this.rightPortalScript = rightPortal.GetComponent<DynamicPortal>();
         SetPortalType(true);
     }
 
@@ -30,24 +30,30 @@ public class DynamicPortalParent : MonoBehaviour
     {
         isOneTimeUse = type;
         Material color = type ? bluePortal : purplePortal;
-        this.entryPortalScript.SetPortalType(type, color);
-        this.exitPortalScript.SetPortalType(type, color);
+        this.leftPortalScript.SetPortalType(type, color);
+        this.rightPortalScript.SetPortalType(type, color);
     }
 
     public void Activate()
     {
-        this.entryPortalScript.Activate();
-        this.exitPortalScript.Activate();
+        this.leftPortalScript.Activate();
+        this.rightPortalScript.Activate();
         if (!isOneTimeUse)
         {
             StartCoroutine(Open15Seconds());
         }
     }
 
+    public void MovePortal(Vector2 leftMovement, bool leftGrip, Vector2 rightMovement, bool rightGrip)
+    {
+        this.leftPortalScript.Move(leftMovement, leftGrip);
+        this.rightPortalScript.Move(rightMovement, rightGrip);
+    }
+
     public GameObject GetMate(GameObject child)
     {
-        if (child == entryPortal) return exitPortal;
-        if (child == exitPortal) return entryPortal;
+        if (child == leftPortal) return rightPortal;
+        if (child == rightPortal) return leftPortal;
         return null; 
     }
 

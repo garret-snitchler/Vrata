@@ -16,9 +16,18 @@ public class UserControllerButtons : MonoBehaviour
     public SteamVR_Action_Boolean HitB;
     public SteamVR_Action_Boolean HitX;
     public SteamVR_Action_Boolean HitY;
+    public SteamVR_Action_Boolean LeftTrigger;
+    public SteamVR_Action_Boolean RightTrigger;
+    public SteamVR_Action_Vector2 LeftJoystick;
+    public SteamVR_Action_Vector2 RightJoystick;
+    public SteamVR_Action_Boolean LeftGrip;
+    public SteamVR_Action_Boolean RightGrip;
+
     [Space]
     [Header("Dynamic Portal")]
     public GameObject portalParentPrefab;
+    public GameObject TeleportingAsset;
+    public GameObject SnapTurnAsset;
 
     private bool portalMode = false;
     private GameObject parent;
@@ -36,7 +45,7 @@ public class UserControllerButtons : MonoBehaviour
             print("A");
             if (!portalMode)
             {
-                portalMode = true;
+                SetPortalMode(true);
                 Vector3 playerPosition = this.gameObject.transform.position;
                 Vector3 spawnPoint = playerPosition + new Vector3(0, 1, -2);
 
@@ -44,7 +53,7 @@ public class UserControllerButtons : MonoBehaviour
                 parent.GetComponent<DynamicPortalParent>().GetObjects();
             } else
             {
-                portalMode = false;
+                SetPortalMode(false);
                 parent.GetComponent<DynamicPortalParent>().Activate(); 
             }
         }
@@ -63,8 +72,11 @@ public class UserControllerButtons : MonoBehaviour
             print("Y");
         } else if (DoubleClickA.GetStateDown(handTypeR))
         {
-            portalMode = false; 
+            SetPortalMode(false);
             Destroy(parent); 
+        } else if (portalMode)
+        {
+            parent.GetComponent<DynamicPortalParent>().MovePortal(LeftJoystick.GetAxis(handTypeL), LeftGrip.GetState(handTypeL), RightJoystick.GetAxis(handTypeR), RightGrip.GetState(handTypeR));
         }
     }
 
@@ -72,5 +84,20 @@ public class UserControllerButtons : MonoBehaviour
     {
         isOneTimePortal = !isOneTimePortal;
         parent.GetComponent<DynamicPortalParent>().SetPortalType(isOneTimePortal);
+    }
+
+    void SetPortalMode(bool mode)
+    {
+        portalMode = mode;
+        if (portalMode)
+        {
+            TeleportingAsset.SetActive(false);
+            SnapTurnAsset.SetActive(false);
+        }
+        else
+        {
+            TeleportingAsset.SetActive(true);
+            SnapTurnAsset.SetActive(true);
+        }
     }
 }
