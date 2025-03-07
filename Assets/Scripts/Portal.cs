@@ -19,10 +19,10 @@ public class Portal : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collider)
     {
-        if (collision.gameObject.CompareTag("Player")) {
-            GameObject player = collision.gameObject;
+        if (collider.gameObject.CompareTag("Player")) {
+            GameObject player = collider.gameObject;
             player.transform.position = otherPortal.transform.position;
         }
     }
