@@ -21,9 +21,13 @@ public class Portal : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.CompareTag("Player")) {
-            GameObject player = collider.gameObject;
-            player.transform.position = otherPortal.transform.position;
+        print("THIS TRIGGERED");
+        if (collider.gameObject.tag != "Portalled")
+        {
+            GameObject gameObject = collider.gameObject;
+            gameObject.transform.parent.parent.transform.position = otherPortal.transform.position;
+
+            gameObject.tag = "Portalled";
         }
     }
 }
