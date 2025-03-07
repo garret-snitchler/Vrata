@@ -26,18 +26,30 @@ public class MovePlayer : MonoBehaviour
         RaycastHit hit;
         if (!(head.SweepTest(Player.instance.hmdTransform.TransformDirection(Vector3.forward), out hit, distance)))
         {
-            // pushing forward
-            if (moveValue.axis.y > 0)
+            // this treats all movement directions equally
+            //if (moveValue.axis.y > 0)
             {
                 // get direction HMD is facing
-                Vector3 direction = Player.instance.hmdTransform.TransformDirection(new Vector3(0, 0, moveValue.axis.y));
+                Vector3 direction = Player.instance.hmdTransform.TransformDirection(new Vector3(moveValue.axis.x, 0, moveValue.axis.y));
                 // joystick value * sensitivity value
-                speed = moveValue.axis.y * sensitivity;
+                speed = moveValue.axis.magnitude * sensitivity;
                 // keep speed in intended limits
                 speed = Mathf.Clamp(speed, 0, maxSpeed);
                 // move player along HORIZONTAL plane in direction specified earlier
                 transform.position += speed * Time.deltaTime * Vector3.ProjectOnPlane(direction, Vector3.up);
             }
+            //// pushing backward
+            //if (moveValue.axis.y < 0)
+            //{
+            //    // get direction HMD is facing
+            //    Vector3 direction = Player.instance.hmdTransform.TransformDirection(new Vector3(0, 0, moveValue.axis.y));
+            //    // joystick value * sensitivity value
+            //    speed = moveValue.axis.y * sensitivity;
+            //    // keep speed in intended limits
+            //    speed = Mathf.Clamp(speed, -1 * maxSpeed, 0);
+            //    // move player along HORIZONTAL plane in direction specified earlier
+            //    transform.position += speed * Time.deltaTime * Vector3.ProjectOnPlane(direction, Vector3.up);
+            //}
         }
     }
 }
