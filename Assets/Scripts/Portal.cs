@@ -21,13 +21,28 @@ public class Portal : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        print("THIS TRIGGERED");
-        if (collider.gameObject.tag != "Portalled")
+        print("PORTAL ENTERED");
+        GameObject gameObject = collider.gameObject;
+        //print(gameObject.tag);
+        if (gameObject.tag != "Portalled")
         {
-            GameObject gameObject = collider.gameObject;
+            //originalItem = gameObject;
+            //originalItem.tag = gameObject.tag; // store object's original tag so we can return it later
             gameObject.transform.parent.parent.transform.position = otherPortal.transform.position;
-
             gameObject.tag = "Portalled";
         }
+    }
+
+    private void OnTriggerExit(Collider collider)
+    {
+        print("PORTAL EXITED");
+        //print(collider.gameObject.tag);
+        if (collider.gameObject.tag == "Portalled")
+        {
+            //collider.gameObject.tag = originalItem.tag;
+            // remove item data from equation
+        }
+        //originalItem = null;
+        //print(collider.gameObject.tag);
     }
 }
