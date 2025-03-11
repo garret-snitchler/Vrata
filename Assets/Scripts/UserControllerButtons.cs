@@ -7,6 +7,7 @@ using System;
 public class UserControllerButtons : MonoBehaviour
 {
     // action set
+    [Header("Actions")]
     public SteamVR_ActionSet playerOperationActionSet;
     //Hand to get (right hand or left hand or any hand)
     public SteamVR_Input_Sources handTypeL;
@@ -25,12 +26,17 @@ public class UserControllerButtons : MonoBehaviour
 
     [Space]
     [Header("Dynamic Portal")]
-    public GameObject portalParentPrefab;
     public GameObject TeleportingAsset;
     public GameObject SnapTurnAsset;
+    public GameObject worldParentPrefab; 
+
+    [Space]
+    [Header("Other")]
+    public Transform VRCamera; 
+
 
     private bool portalMode = false;
-    private GameObject parent;
+    private GameObject parentPortal;
     private bool isOneTimePortal = true; 
 
     void Start()
@@ -46,15 +52,16 @@ public class UserControllerButtons : MonoBehaviour
             if (!portalMode)
             {
                 SetPortalMode(true);
-                Vector3 playerPosition = this.gameObject.transform.position;
-                Vector3 spawnPoint = playerPosition + new Vector3(0, 1, -2);
+                GameObject worldParent = Instantiate(worldParentPrefab, VRCamera);
+                worldParent.transform.rotation = Quaternion.Euler(0, worldParent.transform.eulerAngles.y, 0);
+                worldParent.transform.SetParent(null);
 
-                parent = Instantiate(portalParentPrefab, spawnPoint, Quaternion.identity);
-                parent.GetComponent<DynamicPortalParent>().GetObjects();
+                parentPortal = worldParent.transform.GetChild(0).gameObject;
+                parentPortal.GetComponent<DynamicPortalParent>().GetObjects();
             } else
             {
                 SetPortalMode(false);
-                parent.GetComponent<DynamicPortalParent>().Activate(); 
+                parentPortal.GetComponent<DynamicPortalParent>().Activate();
             }
         }
         else if (HitB.GetStateDown(handTypeR))
@@ -62,7 +69,7 @@ public class UserControllerButtons : MonoBehaviour
             print("B");
             if (portalMode)
             {
-                ChangePortalType(); 
+                ChangePortalType();
             }
         } else if (HitX.GetStateDown(handTypeL))
         {
@@ -73,17 +80,23 @@ public class UserControllerButtons : MonoBehaviour
         } else if (DoubleClickA.GetStateDown(handTypeR))
         {
             SetPortalMode(false);
-            Destroy(parent); 
+            Destroy(parentPortal.transform.parent.gameObject);
+        } else if (LeftTrigger.GetStateDown(handTypeL)) {
+            //set rotation left
+            parentPortal.GetComponent<DynamicPortalParent>().RotationTrigger(true);
+        } else if (RightTrigger.GetStateDown(handTypeR)) {
+            //set rotation right
+            parentPortal.GetComponent<DynamicPortalParent>().RotationTrigger(false);
         } else if (portalMode)
         {
-            parent.GetComponent<DynamicPortalParent>().MovePortal(LeftJoystick.GetAxis(handTypeL), LeftGrip.GetState(handTypeL), RightJoystick.GetAxis(handTypeR), RightGrip.GetState(handTypeR));
+            parentPortal.GetComponent<DynamicPortalParent>().MovePortal(LeftJoystick.GetAxis(handTypeL), LeftGrip.GetState(handTypeL), RightJoystick.GetAxis(handTypeR), RightGrip.GetState(handTypeR));
         }
     }
 
     void ChangePortalType()
     {
         isOneTimePortal = !isOneTimePortal;
-        parent.GetComponent<DynamicPortalParent>().SetPortalType(isOneTimePortal);
+        parentPortal.GetComponent<DynamicPortalParent>().SetPortalType(isOneTimePortal);
     }
 
     void SetPortalMode(bool mode)

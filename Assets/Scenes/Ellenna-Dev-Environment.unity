@@ -1444,6 +1444,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!4 &1327602942 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 429506, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+  m_PrefabInstance: {fileID: 1439890917}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1412296892
 GameObject:
   m_ObjectHideFlags: 0
@@ -1602,9 +1607,10 @@ MonoBehaviour:
   RightGrip:
     actionPath: /actions/CustomSet/in/RightGrip
     needsReinit: 0
-  portalParentPrefab: {fileID: 172413070132674946, guid: 6b53a2e5595596545ac901aa53d2b794, type: 3}
   TeleportingAsset: {fileID: 1955759288}
   SnapTurnAsset: {fileID: 59388382}
+  worldParentPrefab: {fileID: 265514746121637497, guid: 345ddcbbdf3b88442b960236280eadc7, type: 3}
+  VRCamera: {fileID: 1327602942}
 --- !u!1 &1598816526
 GameObject:
   m_ObjectHideFlags: 0
