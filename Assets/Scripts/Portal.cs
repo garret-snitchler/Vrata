@@ -22,13 +22,9 @@ public class Portal : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        print("PORTAL ENTERED");
         GameObject gameObject = collider.gameObject;
-        //print(gameObject.tag);
-        if (gameObject.tag != "Portalled")
+        if (gameObject.tag == "Player")
         {
-            //originalItem = gameObject;
-            //originalItem.tag = gameObject.tag; // store object's original tag so we can return it later
             gameObject.transform.parent.parent.transform.position = otherPortal.transform.position;
             gameObject.tag = "Portalled";
         }
@@ -36,19 +32,14 @@ public class Portal : MonoBehaviour
 
     private void OnTriggerExit(Collider collider)
     {
-        print("PORTAL EXITED");
-        //print(collider.gameObject.tag);
         if (collider.gameObject.tag == "Portalled")
         {
-            StartCoroutine(waitThreeSeconds(collider.gameObject));
-            //collider.gameObject.tag = originalItem.tag;
-            // remove item data from equation
+            // give player time to step out of portal
+            StartCoroutine(waitThreeThenResetTag(collider.gameObject));
         }
-        //originalItem = null;
-        //print(collider.gameObject.tag);
     }
 
-    private IEnumerator waitThreeSeconds(GameObject gameObject)
+    private IEnumerator waitThreeThenResetTag(GameObject gameObject)
     {
         yield return new WaitForSeconds(3);
         gameObject.tag = "Player";
