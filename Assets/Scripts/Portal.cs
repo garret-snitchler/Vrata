@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class Portal : MonoBehaviour
@@ -39,10 +40,17 @@ public class Portal : MonoBehaviour
         //print(collider.gameObject.tag);
         if (collider.gameObject.tag == "Portalled")
         {
+            StartCoroutine(waitThreeSeconds(collider.gameObject));
             //collider.gameObject.tag = originalItem.tag;
             // remove item data from equation
         }
         //originalItem = null;
         //print(collider.gameObject.tag);
+    }
+
+    private IEnumerator waitThreeSeconds(GameObject gameObject)
+    {
+        yield return new WaitForSeconds(3);
+        gameObject.tag = "Player";
     }
 }
