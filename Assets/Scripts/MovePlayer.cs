@@ -23,8 +23,8 @@ public class MovePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastHit hit;
-        if (!(head.SweepTest(Player.instance.hmdTransform.TransformDirection(Vector3.forward), out hit, distance)))
+        //RaycastHit hit;
+        //if (!(head.SweepTest(Player.instance.hmdTransform.TransformDirection(Vector3.forward), out hit, distance)))
         {
             // this treats all movement directions equally
             //if (moveValue.axis.y > 0)
