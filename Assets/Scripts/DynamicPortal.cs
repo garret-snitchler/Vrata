@@ -1,17 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR;
+using Valve.VR.InteractionSystem;
+using System;
 
 public class DynamicPortal : MonoBehaviour
 {
-    public DynamicPortalParent parentScript; 
+    public DynamicPortalParent parentScript;
+
     private bool isOneTime = true;
     private bool isActive = false;
-    private Rigidbody rigidbody; 
+    private Rigidbody rigidbody;
+    private Hand hand; 
 
     public void Awake()
     {
         this.rigidbody = this.gameObject.GetComponent<Rigidbody>();
+    }
+
+    public void SetInput(bool isLeft)
+    {
+        this.hand = isLeft ? Player.instance.leftHand : Player.instance.rightHand;
     }
 
     public void SetPortalType(bool isOneTime, Material color)
@@ -34,12 +44,17 @@ public class DynamicPortal : MonoBehaviour
         else if (isVertical)
         {
             print("is vertical"); 
-            rigidbody.AddForce(new Vector3(0, -movement.y, 0)); 
+            rigidbody.AddRelativeForce(new Vector3(0, movement.y, 0)); 
         }
         else
         {
-            rigidbody.AddForce(new Vector3(-movement.x, 0, -movement.y));
+            rigidbody.AddRelativeForce(new Vector3(-movement.y, 0, movement.x));
         }
+    }
+
+    public void Rotate(Vector2 joystickMovement)
+    {
+        this.gameObject.transform.Rotate(new Vector3(0, joystickMovement.x, joystickMovement.y));
     }
 
     private void OnTriggerEnter(Collider other)

@@ -4,6 +4,7 @@ using UnityEngine;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using Valve.VR;
 
 public class DynamicPortalParent : MonoBehaviour
 {
@@ -22,7 +23,9 @@ public class DynamicPortalParent : MonoBehaviour
         this.leftPortal = this.gameObject.transform.GetChild(0).gameObject;
         this.rightPortal = this.gameObject.transform.GetChild(1).gameObject;
         this.leftPortalScript = leftPortal.GetComponent<DynamicPortal>();
+        this.leftPortalScript.SetInput(true); 
         this.rightPortalScript = rightPortal.GetComponent<DynamicPortal>();
+        this.rightPortalScript.SetInput(false);
         SetPortalType(true);
     }
 
@@ -48,6 +51,18 @@ public class DynamicPortalParent : MonoBehaviour
     {
         this.leftPortalScript.Move(leftMovement, leftGrip);
         this.rightPortalScript.Move(rightMovement, rightGrip);
+    }
+
+    public void Rotate(bool isLeft, Vector2 joystickMovement)
+    {
+        if (isLeft)
+        {
+            this.leftPortalScript.Rotate(joystickMovement);
+        }
+        else
+        {
+            this.rightPortalScript.Rotate(joystickMovement);
+        }
     }
 
     public GameObject GetMate(GameObject child)

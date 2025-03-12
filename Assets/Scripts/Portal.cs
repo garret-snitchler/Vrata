@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class Portal : MonoBehaviour
@@ -21,9 +22,35 @@ public class Portal : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.CompareTag("Player")) {
-            GameObject player = collider.gameObject;
-            player.transform.position = otherPortal.transform.position;
+        print("PORTAL ENTERED");
+        GameObject gameObject = collider.gameObject;
+        //print(gameObject.tag);
+        if (gameObject.tag != "Portalled")
+        {
+            //originalItem = gameObject;
+            //originalItem.tag = gameObject.tag; // store object's original tag so we can return it later
+            gameObject.transform.parent.parent.transform.position = otherPortal.transform.position;
+            gameObject.tag = "Portalled";
         }
+    }
+
+    private void OnTriggerExit(Collider collider)
+    {
+        print("PORTAL EXITED");
+        //print(collider.gameObject.tag);
+        if (collider.gameObject.tag == "Portalled")
+        {
+            StartCoroutine(waitThreeSeconds(collider.gameObject));
+            //collider.gameObject.tag = originalItem.tag;
+            // remove item data from equation
+        }
+        //originalItem = null;
+        //print(collider.gameObject.tag);
+    }
+
+    private IEnumerator waitThreeSeconds(GameObject gameObject)
+    {
+        yield return new WaitForSeconds(3);
+        gameObject.tag = "Player";
     }
 }
