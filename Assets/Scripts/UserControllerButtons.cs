@@ -81,12 +81,12 @@ public class UserControllerButtons : MonoBehaviour
         {
             SetPortalMode(false);
             Destroy(parentPortal.transform.parent.gameObject);
-        } else if (LeftTrigger.GetStateDown(handTypeL)) {
+        } else if (LeftTrigger.GetState(handTypeL)) {
             //set rotation left
-            parentPortal.GetComponent<DynamicPortalParent>().RotationTrigger(true);
-        } else if (RightTrigger.GetStateDown(handTypeR)) {
+            parentPortal.GetComponent<DynamicPortalParent>().Rotate(true, LeftJoystick.GetAxis(handTypeL));
+        } else if (RightTrigger.GetState(handTypeR)) {
             //set rotation right
-            parentPortal.GetComponent<DynamicPortalParent>().RotationTrigger(false);
+            parentPortal.GetComponent<DynamicPortalParent>().Rotate(false, RightJoystick.GetAxis(handTypeR));
         } else if (portalMode)
         {
             parentPortal.GetComponent<DynamicPortalParent>().MovePortal(LeftJoystick.GetAxis(handTypeL), LeftGrip.GetState(handTypeL), RightJoystick.GetAxis(handTypeR), RightGrip.GetState(handTypeR));

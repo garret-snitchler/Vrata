@@ -53,15 +53,15 @@ public class DynamicPortalParent : MonoBehaviour
         this.rightPortalScript.Move(rightMovement, rightGrip);
     }
 
-    public void RotationTrigger(bool isLeft)
+    public void Rotate(bool isLeft, Vector2 joystickMovement)
     {
         if (isLeft)
         {
-            this.leftPortalScript.RotationTrigger();
+            this.leftPortalScript.Rotate(joystickMovement);
         }
         else
         {
-            this.rightPortalScript.RotationTrigger();
+            this.rightPortalScript.Rotate(joystickMovement);
         }
     }
 

@@ -12,7 +12,6 @@ public class DynamicPortal : MonoBehaviour
     private bool isOneTime = true;
     private bool isActive = false;
     private Rigidbody rigidbody;
-    private bool rotateOn = true;
     private Hand hand; 
 
     public void Awake()
@@ -25,14 +24,6 @@ public class DynamicPortal : MonoBehaviour
         this.hand = isLeft ? Player.instance.leftHand : Player.instance.rightHand;
     }
 
-    public void FixedUpdate()
-    {
-        if (rotateOn)
-        {
-            this.gameObject.transform.eulerAngles = hand.gameObject.transform.eulerAngles + new Vector3(-40, -40, 0);
-        }
-    }
-
     public void SetPortalType(bool isOneTime, Material color)
     {
         this.isOneTime = isOneTime;
@@ -41,7 +32,6 @@ public class DynamicPortal : MonoBehaviour
     
     public void Activate()
     {
-        rotateOn = false;
         isActive = true;
     }
 
@@ -62,9 +52,9 @@ public class DynamicPortal : MonoBehaviour
         }
     }
 
-    public void RotationTrigger()
+    public void Rotate(Vector2 joystickMovement)
     {
-        rotateOn = !rotateOn; 
+        this.gameObject.transform.Rotate(new Vector3(0, joystickMovement.x, joystickMovement.y));
     }
 
     private void OnTriggerEnter(Collider other)
