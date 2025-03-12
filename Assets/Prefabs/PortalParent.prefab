@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 172413070132674946}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.06, y: 1.43, z: -6.62}
+  m_LocalPosition: {x: 0, y: 0, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -48,10 +48,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bluePortal: {fileID: 2100000, guid: f788d200b038c7849b4e9f6c4f8b376c, type: 2}
   purplePortal: {fileID: 2100000, guid: eed11a96fe0171741adabb75c8f1bc43, type: 2}
-  entryPortal: {fileID: 0}
-  exitPortal: {fileID: 0}
-  entryPortalScript: {fileID: 0}
-  exitPortalScript: {fileID: 0}
+  leftPortal: {fileID: 3712813023310417259}
+  rightPortal: {fileID: 3295168580018184139}
+  leftPortalScript: {fileID: 1391682361736686618}
+  rightPortalScript: {fileID: 4073161575968038950}
 --- !u!1001 &4698715939542387075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7716469296767776874, guid: 86b3e70b03eb4dc4eb3ec5660450f3dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.7
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7716469296767776874, guid: 86b3e70b03eb4dc4eb3ec5660450f3dd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -110,7 +110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7822747183561627208, guid: 86b3e70b03eb4dc4eb3ec5660450f3dd, type: 3}
       propertyPath: m_Name
-      value: Dynamic-Portal
+      value: Right
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -157,7 +157,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7716469296767776874, guid: 86b3e70b03eb4dc4eb3ec5660450f3dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.7
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7716469296767776874, guid: 86b3e70b03eb4dc4eb3ec5660450f3dd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -197,7 +197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7822747183561627208, guid: 86b3e70b03eb4dc4eb3ec5660450f3dd, type: 3}
       propertyPath: m_Name
-      value: Dynamic-Portal
+      value: Left
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
