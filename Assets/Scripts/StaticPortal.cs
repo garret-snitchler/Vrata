@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class Portal : MonoBehaviour
+// This class represents a static portal, something only usable by players. It currently assumes that both portals are within the same scene, and contains no code for visualizing the other end of the portal. If these assumptions are broken, additional coding will be needed.
+public class StaticPortal : MonoBehaviour
 {
     // currently just using this for the purpose of having one portal keep track of the portal it's paired with, other things can be added as needed
     public GameObject otherPortal; // this is the portal that is paired with this one
