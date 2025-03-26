@@ -32,8 +32,8 @@ public class UserControllerButtons : MonoBehaviour
 
     [Space]
     [Header("Other")]
-    public Transform VRCamera; 
-
+    public Transform VRCamera;
+    public WeaponHandler weaponHandlerScript;
 
     private bool portalMode = false;
     private GameObject parentPortal;
@@ -73,7 +73,7 @@ public class UserControllerButtons : MonoBehaviour
             }
         } else if (HitX.GetStateDown(handTypeL))
         {
-            print("X");
+            weaponHandlerScript.SwitchWeaponColor();
         } else if (HitY.GetStateDown(handTypeL))
         {
             print("Y");
