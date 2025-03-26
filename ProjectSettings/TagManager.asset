@@ -8,6 +8,7 @@ TagManager:
   - projectile
   - FxTemporaire
   - Portalled
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -16,8 +17,8 @@ TagManager:
   - Water
   - UI
   - Portalled
-  - 
-  - 
+  - Player
+  - Ground
   - 
   - 
   - 
