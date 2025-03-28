@@ -10,7 +10,16 @@ public class SwordInteraction : MonoBehaviour
     public List<Material> swordTypes = new List<Material>();
 
     private int currentColor = 0; 
-    private Hand holdingHand; 
+    private Hand holdingHand;
+
+    private List<Color> swordColors = new List<Color>()
+    {
+        new Color(0.514f, 0.761f, 1), //og
+        new Color(0.227f, 0.663f, 0.043f), //earth
+        new Color(0.706f, 0.329f, 0.086f), //fire
+        new Color(0.059f, 0.196f, 0.486f), //water
+        new Color(0.929f, 0.353f, 1) //purple
+    };
 
     public void OnCollisionEnter(Collision coll)
     {
@@ -52,14 +61,18 @@ public class SwordInteraction : MonoBehaviour
         }
 
         this.gameObject.GetComponent<MeshRenderer>().material = swordTypes[currentColor];
-        ParticleSystem.MainModule ps = this.gameObject.transform.GetChild(2).GetComponent<ParticleSystem>().main;
-        
-        //TODO: add a list of custom colors
-        ps.startColor = Color.red;
 
-        //TODO: change sparks and glow colors too
+        ParticleSystem.MainModule ps = this.gameObject.transform.GetChild(0).GetComponent<ParticleSystem>().main;
+        ps.startColor = swordColors[currentColor];
 
-        //TODO: fix the preview sword so it lays on the table. 
-        //TODO: add a way to switch the sword between hands? 
+
+        ParticleSystem.MainModule ps2 = this.gameObject.transform.GetChild(1).GetComponent<ParticleSystem>().main;
+        ps2.startColor = swordColors[currentColor];
+
+
+        ParticleSystem.MainModule ps3 = this.gameObject.transform.GetChild(2).GetComponent<ParticleSystem>().main;
+        ps3.startColor = swordColors[currentColor];
     }
+
+    //TODO: add a way to switch the sword between hands? 
 }
