@@ -84,40 +84,41 @@ public class Enemy : MonoBehaviour
         }
     }
 
-   private void ChasePlayer()
-{
-    navAgent.SetDestination(player.position);
-    animator.SetFloat("Velocity", 0.6f);
-    navAgent.isStopped = false; // Add this line
-}
-
-
-  private void AttackPlayer()
-{
-    navAgent.SetDestination(transform.position);
-
-    if (!alreadyAttacked)
+    private void ChasePlayer()
     {
-        transform.LookAt(player.position);
-        alreadyAttacked = true;
-        animator.SetBool("Attack", true);
-        Invoke(nameof(ResetAttack), timeBetweenAttacks);
+        navAgent.SetDestination(player.position);
+        animator.SetFloat("Velocity", 0.6f);
+        navAgent.isStopped = false; // Add this line
+    }
 
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, attackRange))
+
+    private void AttackPlayer()
+    {
+        navAgent.SetDestination(transform.position);
+
+        if (!alreadyAttacked)
         {
-            /*
-                YOU CAN USE THIS TO GET THE PLAYER HUD AND CALL THE TAKE DAMAGE FUNCTION
+            print("attacking player");
+            transform.LookAt(player.position);
+            alreadyAttacked = true;
+            animator.SetBool("Attack", true);
+            Invoke(nameof(ResetAttack), timeBetweenAttacks);
 
-            PlayerHUD playerHUD = hit.transform.GetComponent<PlayerHUD>();
-            if (playerHUD != null)
+            RaycastHit hit;
+            print("attempting to hit");
+            if (Physics.Raycast(transform.position, transform.forward, out hit, attackRange))
             {
-               playerHUD.takeDamage(damage);
+                //YOU CAN USE THIS TO GET THE PLAYER HUD AND CALL THE TAKE DAMAGE FUNCTION
+
+                PlayerHUD playerHUD = hit.transform.parent.parent.transform.GetComponent<PlayerHUD>();
+                print("player hud is" + playerHUD.name);
+                if (playerHUD != null)
+                {
+                    playerHUD.damagePlayer(damage);
+                }
             }
-             */
         }
     }
-}
 
 
     private void ResetAttack()
