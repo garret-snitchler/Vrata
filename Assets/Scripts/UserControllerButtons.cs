@@ -76,15 +76,15 @@ public class UserControllerButtons : MonoBehaviour
             weaponHandlerScript.SwitchWeaponColor();
         } else if (HitY.GetStateDown(handTypeL))
         {
-            print("Y");
+            weaponHandlerScript.EnablePowerup(); 
         } else if (DoubleClickA.GetStateDown(handTypeR))
         {
             SetPortalMode(false);
             Destroy(parentPortal.transform.parent.gameObject);
-        } else if (LeftTrigger.GetState(handTypeL)) {
+        } else if (portalMode && LeftTrigger.GetState(handTypeL)) {
             //set rotation left
             parentPortal.GetComponent<DynamicPortalParent>().Rotate(true, LeftJoystick.GetAxis(handTypeL));
-        } else if (RightTrigger.GetState(handTypeR)) {
+        } else if (portalMode && RightTrigger.GetState(handTypeR)) {
             //set rotation right
             parentPortal.GetComponent<DynamicPortalParent>().Rotate(false, RightJoystick.GetAxis(handTypeR));
         } else if (portalMode)

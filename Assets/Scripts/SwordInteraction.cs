@@ -24,6 +24,7 @@ public class SwordInteraction : MonoBehaviour
     public void OnCollisionEnter(Collision coll)
     {
         TriggerVibration();
+        StopPowerup();
     }
 
     public void OnCollisionStay(Collision coll)
@@ -34,7 +35,7 @@ public class SwordInteraction : MonoBehaviour
     public void TriggerVibration()
     {
         float duration = 0.01f;  // 1 second
-        float frequency = 150.0f; // Adjust as needed (low = soft, high = intense)
+        float frequency = 50.0f; // Adjust as needed (low = soft, high = intense)
         float amplitude = 1.0f; // 0 to 1 (intensity)
 
         hapticAction.Execute(0, duration, frequency, amplitude, holdingHand.handType);
@@ -74,5 +75,17 @@ public class SwordInteraction : MonoBehaviour
         ps3.startColor = swordColors[currentColor];
     }
 
-    //TODO: add a way to switch the sword between hands? 
+    public void UsePowerup()
+    {
+        this.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+        this.gameObject.transform.GetChild(1).gameObject.SetActive(true); 
+        this.gameObject.transform.GetChild(2).gameObject.SetActive(true);
+    }
+
+    public void StopPowerup()
+    {
+        this.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        this.gameObject.transform.GetChild(1).gameObject.SetActive(false);
+        this.gameObject.transform.GetChild(2).gameObject.SetActive(false);
+    }
 }
