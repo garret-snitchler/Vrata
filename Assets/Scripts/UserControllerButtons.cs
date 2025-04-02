@@ -48,7 +48,7 @@ public class UserControllerButtons : MonoBehaviour
     {
         if (HitA.GetStateDown(handTypeR))
         {
-            print("A");
+            //Hit A once
             if (!portalMode)
             {
                 SetPortalMode(true);
@@ -66,19 +66,22 @@ public class UserControllerButtons : MonoBehaviour
         }
         else if (HitB.GetStateDown(handTypeR))
         {
-            print("B");
+            //Hit B
             if (portalMode)
             {
                 ChangePortalType();
             }
-        } else if (HitX.GetStateDown(handTypeL))
+        } else if (!portalMode && HitX.GetStateDown(handTypeL))
         {
+            //Hit X, not in portal mode
             weaponHandlerScript.SwitchWeaponColor();
-        } else if (HitY.GetStateDown(handTypeL))
+        } else if (!portalMode && HitY.GetStateDown(handTypeL))
         {
+            //Hit Y, not in portal mode
             weaponHandlerScript.EnablePowerup(); 
         } else if (DoubleClickA.GetStateDown(handTypeR))
         {
+            //Double click A
             SetPortalMode(false);
             Destroy(parentPortal.transform.parent.gameObject);
         } else if (portalMode && LeftTrigger.GetState(handTypeL)) {
@@ -89,6 +92,7 @@ public class UserControllerButtons : MonoBehaviour
             parentPortal.GetComponent<DynamicPortalParent>().Rotate(false, RightJoystick.GetAxis(handTypeR));
         } else if (portalMode)
         {
+            //Move portals
             parentPortal.GetComponent<DynamicPortalParent>().MovePortal(LeftJoystick.GetAxis(handTypeL), LeftGrip.GetState(handTypeL), RightJoystick.GetAxis(handTypeR), RightGrip.GetState(handTypeR));
         }
     }

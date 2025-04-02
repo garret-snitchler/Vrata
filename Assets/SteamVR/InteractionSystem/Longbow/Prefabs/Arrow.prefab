@@ -928,6 +928,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseDamage: 5
   powerupDamage: 15
+  isPoweredUp: 0
 --- !u!1 &173732
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,6 +941,8 @@ GameObject:
   - component: {fileID: 11487904}
   - component: {fileID: 6590140}
   - component: {fileID: 5410824}
+  - component: {fileID: 9153032490566449669}
+  - component: {fileID: 4422878106741936815}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: projectile
@@ -1033,6 +1036,37 @@ Rigidbody:
   m_Interpolate: 2
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &9153032490566449669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92f44b8468dff3e4e8a0375091165886, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 5
+  powerupDamage: 15
+  isPoweredUp: 0
+--- !u!114 &4422878106741936815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 006bac08477a5ce4c8bb09c9e94f7ebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrowFeatherObj: {fileID: 1000011145505882}
+  arrowFeatherMats:
+  - {fileID: 2100000, guid: f7cd62d595c763c428123f260c78b711, type: 2}
+  fireOnScript: {fileID: 11438726}
 --- !u!1 &183656
 GameObject:
   m_ObjectHideFlags: 0
@@ -1573,7 +1607,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -1626,7 +1660,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -1679,7 +1713,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationX:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 0
       maxCurve:
@@ -1732,7 +1766,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startRotationY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 0
       maxCurve:

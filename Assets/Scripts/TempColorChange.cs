@@ -11,4 +11,9 @@ public class TempColorChange : MonoBehaviour
         var mat = this.gameObject.GetComponent<MeshRenderer>().material;
         mat.color = new Color(enemyScript.health / 255, 0, 0);
     }
+
+    void OnCollisionEnter(Collision coll)
+    {
+        print(coll.gameObject.name);
+    }
 }

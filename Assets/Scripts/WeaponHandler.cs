@@ -19,21 +19,7 @@ public class WeaponHandler : MonoBehaviour
     {
         currentWeapon = newWeaponType;
         currentHand = hand;
-
-        if (currentWeapon == Weapon.Longbow)
-        {
-            //TODO: set to arrow, not bow. 
-            //if (hand.handType == SteamVR_Input_Sources.LeftHand)
-            //{
-            //    var obj = SteamVR_Input_Sources.RightHand.hand.currentAttachedObject;
-            //    print(obj.name);
-            //}
-            //TODO: arrow should have ArrowInteraction (custom) script
-                //That has ChangeColor and UsePowerup functions. 
-        } else
-        {
-            currentWeaponObj = newWeaponObj;
-        }
+        currentWeaponObj = newWeaponObj;
     }
 
     public void SwitchWeaponColor()
@@ -47,7 +33,7 @@ public class WeaponHandler : MonoBehaviour
                 //TODO: add boom color change
                 break;
             case Weapon.Longbow:
-                //TODO: change color of arrow feathers and particle system. 
+                GetArrow().GetComponent<ArrowInteraction>().ChangeColor(numGemsUnlocked); 
                 break;
             default:
                 break;
@@ -60,11 +46,15 @@ public class WeaponHandler : MonoBehaviour
         if (powerupAvailable)
         {
             powerupAvailable = false;
-            currentWeaponObj.GetComponent<DealsDamage>().IsPoweredUp();
             switch (currentWeapon)
             {
                 case Weapon.Sword:
+                    currentWeaponObj.GetComponent<DealsDamage>().IsPoweredUp();
                     currentWeaponObj.GetComponent<SwordInteraction>().UsePowerup();
+                    break;
+                case Weapon.Longbow:
+                    GetArrow().GetComponent<DealsDamage>().IsPoweredUp();
+                    GetArrow().GetComponent<ArrowInteraction>().UsePowerup();
                     break;
                 default:
                     break;
@@ -94,6 +84,11 @@ public class WeaponHandler : MonoBehaviour
                 break;
         }
         powerupAvailable = true;
+    }
+
+    private GameObject GetArrow()
+    {
+        return currentWeaponObj.transform.GetChild(0).GetChild(0).GetChild(0).gameObject;
     }
 }
 
