@@ -623,10 +623,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyTemplate
       objectReference: {fileID: 0}
+    - target: {fileID: 2155053588245266890, guid: 251815459c6d88e47a21c8232efb3cfe, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 3507973886355386243, guid: 251815459c6d88e47a21c8232efb3cfe, type: 3}
       propertyPath: health
       value: 255
       objectReference: {fileID: 0}
+    - target: {fileID: 3507973886355386243, guid: 251815459c6d88e47a21c8232efb3cfe, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1439890921}
     - target: {fileID: 8589531993619890418, guid: 251815459c6d88e47a21c8232efb3cfe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.3988113
@@ -2252,6 +2260,11 @@ MonoBehaviour:
   worldParentPrefab: {fileID: 265514746121637497, guid: 345ddcbbdf3b88442b960236280eadc7, type: 3}
   VRCamera: {fileID: 1327602942}
   weaponHandlerScript: {fileID: 1484742001}
+--- !u!4 &1439890921 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+  m_PrefabInstance: {fileID: 1439890917}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1468901348
 PrefabInstance:
   m_ObjectHideFlags: 0

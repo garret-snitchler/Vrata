@@ -34,7 +34,7 @@ public class ArrowInteraction : MonoBehaviour
             currentColor += 1;
         }
 
-        arrowFeatherObj.GetComponent<MeshRenderer>().material = arrowFeatherMats[currentColor];
+        //arrowFeatherObj.GetComponent<MeshRenderer>().material = arrowFeatherMats[currentColor];
         
         if (fireOnScript.isBurning)
         {
