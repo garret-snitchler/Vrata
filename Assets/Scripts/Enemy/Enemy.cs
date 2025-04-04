@@ -1,11 +1,12 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.AI;
+using Valve.VR.InteractionSystem;
 
 public class Enemy : MonoBehaviour
 {
     public NavMeshAgent navAgent;
-    public Transform player;
+    public Transform playerBody;
     public LayerMask groundLayer, playerLayer;
     public float health;
     public float walkPointRange;
@@ -24,7 +25,7 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        player = GameObject.Find("PlayerCanWalk").transform; // this has to be the player name
+        playerBody = GameObject.Find("PlayerCanWalk").transform.GetComponentInChildren<BodyCollider>().transform; // this assumes you are using PlayerCanWalk prefab, basically have the position use the player's main collider
         navAgent = GetComponent<NavMeshAgent>();
     }
 
@@ -86,7 +87,7 @@ public class Enemy : MonoBehaviour
 
     private void ChasePlayer()
     {
-        navAgent.SetDestination(player.position);
+        navAgent.SetDestination(playerBody.position);
         animator.SetFloat("Velocity", 0.6f);
         navAgent.isStopped = false; // Add this line
     }
@@ -99,22 +100,27 @@ public class Enemy : MonoBehaviour
         if (!alreadyAttacked)
         {
             print("attacking player");
-            transform.LookAt(player.position);
+            transform.LookAt(playerBody.position);
             alreadyAttacked = true;
             animator.SetBool("Attack", true);
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
 
             RaycastHit hit;
             print("attempting to hit");
-            if (Physics.Raycast(transform.position, transform.forward, out hit, attackRange))
+            Debug.DrawRay(transform.position, transform.forward * attackRange, Color.green, 2.0f);
+            if (Physics.Raycast(transform.position, transform.forward, out hit, attackRange, playerLayer))
             {
+                print(hit.transform.ToString());
                 //YOU CAN USE THIS TO GET THE PLAYER HUD AND CALL THE TAKE DAMAGE FUNCTION
 
-                PlayerHUD playerHUD = hit.transform.parent.parent.transform.GetComponent<PlayerHUD>();
-                print("player hud is" + playerHUD.name);
+                PlayerHUD playerHUD = hit.transform.GetComponentInParent<PlayerHUD>();
                 if (playerHUD != null)
                 {
                     playerHUD.damagePlayer(damage);
+                }
+                else
+                {
+                    print("PlayerHUD is null");
                 }
             }
         }
