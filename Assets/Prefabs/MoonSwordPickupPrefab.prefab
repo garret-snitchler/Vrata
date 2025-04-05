@@ -113,10 +113,9 @@ MonoBehaviour:
     needsReinit: 0
   swordTypes:
   - {fileID: 2100000, guid: 5685c8835e9a76a4fb26b4868cbf11e4, type: 2}
-  - {fileID: 2100000, guid: d9da3d8e0a3e2334d8cb352a04e0756c, type: 2}
   - {fileID: 2100000, guid: 603bead62c65ff341b36851a34a870ac, type: 2}
+  - {fileID: 2100000, guid: d9da3d8e0a3e2334d8cb352a04e0756c, type: 2}
   - {fileID: 2100000, guid: 87b07c5f274f7234a95f737593b114df, type: 2}
-  - {fileID: 2100000, guid: 1dbd42bf9841b4c46b31a0c698b5b767, type: 2}
 --- !u!114 &4947739251963372546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,6 +310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseDamage: 10
   powerupDamage: 30
+  isPoweredUp: 0
 --- !u!1 &4053852058350553162
 GameObject:
   m_ObjectHideFlags: 0

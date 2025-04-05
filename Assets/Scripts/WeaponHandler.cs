@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
+using System;
+using System.Linq; 
 
 public class WeaponHandler : MonoBehaviour
 {
@@ -10,10 +12,12 @@ public class WeaponHandler : MonoBehaviour
     private Hand? currentHand = null;
     private GameObject? currentWeaponObj = null;
 
-    public int numGemsUnlocked = 0;
-    public AudioSource powerupNotAvailable; 
+    public List<bool> gemsUnlocked = new List<bool> { false, false, false };
+
+    public AudioSource powerupNotAvailable;
 
     private bool powerupAvailable = true;
+    private int arrowColor = 0;
 
     public void ChangeWeaponType(Weapon? newWeaponType, Hand? hand, GameObject? newWeaponObj)
     {
@@ -22,55 +26,95 @@ public class WeaponHandler : MonoBehaviour
         currentWeaponObj = newWeaponObj;
     }
 
+    public void SetColorOfNewInstantiate()
+    {
+        if (currentWeapon == Weapon.Longbow)
+        {
+            GetArrow().GetComponent<ArrowInteraction>().SetColor(arrowColor);
+        }
+        else if (currentWeapon == Weapon.Boom)
+        {
+            //TODO: fill in
+        }
+    }
+
     public void SwitchWeaponColor()
     {
-        switch (currentWeapon)
+        int n = NumGemsUnlocked(); 
+        if (n > 0)
         {
-            case Weapon.Sword:
-                currentWeaponObj.GetComponent<SwordInteraction>().ChangeColor(numGemsUnlocked);
-                break;
-            case Weapon.Boom:
-                //TODO: add boom color change
-                break;
-            case Weapon.Longbow:
-                GetArrow().GetComponent<ArrowInteraction>().ChangeColor(numGemsUnlocked); 
-                break;
-            default:
-                break;
+            switch (currentWeapon)
+            {
+                case Weapon.Sword:
+                    currentWeaponObj.GetComponent<SwordInteraction>().ChangeColor(gemsUnlocked, n);
+                    break;
+                case Weapon.Boom:
+                    //TODO: add boom color change
+                    break;
+                case Weapon.Longbow:
+                    arrowColor = GetArrow().GetComponent<ArrowInteraction>().ChangeColor(gemsUnlocked, n);
+                    break;
+                default:
+                    break;
+            }
+        }
+        else
+        {
+            print("cant change color"); 
+            powerupNotAvailable.Play();
         }
     }
 
     public void EnablePowerup()
     {
-        print(powerupAvailable);
-        if (powerupAvailable)
+        if (powerupAvailable && NumGemsUnlocked() > 0)
         {
-            powerupAvailable = false;
             switch (currentWeapon)
             {
                 case Weapon.Sword:
-                    currentWeaponObj.GetComponent<DealsDamage>().IsPoweredUp();
-                    currentWeaponObj.GetComponent<SwordInteraction>().UsePowerup();
+                    if (currentWeaponObj.GetComponent<SwordInteraction>().UsingSpecialSword())
+                    {
+                        powerupAvailable = false;
+                        currentWeaponObj.GetComponent<DealsDamage>().IsPoweredUp();
+                        currentWeaponObj.GetComponent<SwordInteraction>().UsePowerup();
+                        StartCoroutine(Recharge());
+                    }
+                    else
+                    {
+                        print("sword powerup not available");
+                        powerupNotAvailable.Play();
+                    }
                     break;
                 case Weapon.Longbow:
-                    GetArrow().GetComponent<DealsDamage>().IsPoweredUp();
-                    GetArrow().GetComponent<ArrowInteraction>().UsePowerup();
+                    if (GetArrow().GetComponent<ArrowInteraction>().UsingSpecialArrow())
+                    {
+                        powerupAvailable = false;
+                        GetArrow().GetComponent<DealsDamage>().IsPoweredUp();
+                        GetArrow().GetComponent<ArrowInteraction>().UsePowerup();
+                        StartCoroutine(Recharge());
+                    }
+                    else
+                    {
+                        print("arrow powerup not available"); 
+                        powerupNotAvailable.Play();
+                    }
                     break;
                 default:
                     break;
             }
-            StartCoroutine(Recharge());
         }
         else
         {
+            print("powerup not available yet"); 
             powerupNotAvailable.Play();
         }
     }
 
     IEnumerator Recharge()
     {
+        print("start recharge"); 
         yield return new WaitForSeconds(10);
-        DisablePowerup(); 
+        DisablePowerup();
     }
 
     public void DisablePowerup()
@@ -80,9 +124,13 @@ public class WeaponHandler : MonoBehaviour
             case Weapon.Sword:
                 currentWeaponObj.GetComponent<SwordInteraction>().StopPowerup();
                 break;
+            case Weapon.Longbow:
+                GetArrow().GetComponent<ArrowInteraction>().StopPowerup();
+                break;
             default:
                 break;
         }
+        print("powerupAvailable"); 
         powerupAvailable = true;
     }
 
@@ -90,6 +138,12 @@ public class WeaponHandler : MonoBehaviour
     {
         return currentWeaponObj.transform.GetChild(0).GetChild(0).GetChild(0).gameObject;
     }
-}
 
+    private int NumGemsUnlocked()
+    {
+        return gemsUnlocked.Count(b => b);
+    }
+}
 public enum Weapon { Longbow, Sword, Boom }
+
+

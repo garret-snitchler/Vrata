@@ -629,7 +629,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3507973886355386243, guid: 251815459c6d88e47a21c8232efb3cfe, type: 3}
       propertyPath: health
-      value: 255
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3507973886355386243, guid: 251815459c6d88e47a21c8232efb3cfe, type: 3}
       propertyPath: player
@@ -2053,7 +2053,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 14
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &1401310867
 GameObject:
@@ -2440,7 +2440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08b58d19459971a4e9605ab55e90f569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numGemsUnlocked: 4
+  numGemsUnlocked: 3
   powerupNotAvailable: {fileID: 1930268904}
 --- !u!4 &1484742002
 Transform:
@@ -3213,7 +3213,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 0f21ac54ede2fb1488c5719b33f0122d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1213947815bc304428e5be9a84ed3429, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

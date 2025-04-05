@@ -73,7 +73,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
@@ -989,7 +989,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.01, y: 0.01, z: 0.82}
   m_Center: {x: 0, y: 0, z: 0.41}
@@ -1049,7 +1049,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   arrowFeatherObj: {fileID: 1000011145505882}
   arrowFeatherMats:
-  - {fileID: 2100000, guid: f7cd62d595c763c428123f260c78b711, type: 2}
+  - {fileID: 2100000, guid: 3290738ec527c044fb26c8fb040a0810, type: 2}
+  - {fileID: 2100000, guid: 6cb09facab358f64e81ca4fd2c80ba05, type: 2}
+  - {fileID: 2100000, guid: 2b372911c13eda644818311f68bd4e94, type: 2}
+  - {fileID: 2100000, guid: ba2a0872e807d5c4c9949807bfa580a3, type: 2}
   fireOnScript: {fileID: 11438726}
 --- !u!1 &183656
 GameObject:
@@ -6255,7 +6258,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f7cd62d595c763c428123f260c78b711, type: 2}
+  - {fileID: 2100000, guid: 3290738ec527c044fb26c8fb040a0810, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

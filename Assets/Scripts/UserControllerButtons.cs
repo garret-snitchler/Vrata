@@ -73,11 +73,11 @@ public class UserControllerButtons : MonoBehaviour
             }
         } else if (!portalMode && HitX.GetStateDown(handTypeL))
         {
-            //Hit X, not in portal mode
+            //Hit X, not in portal mode - switch color
             weaponHandlerScript.SwitchWeaponColor();
         } else if (!portalMode && HitY.GetStateDown(handTypeL))
         {
-            //Hit Y, not in portal mode
+            //Hit Y, not in portal mode - enable powerup
             weaponHandlerScript.EnablePowerup(); 
         } else if (DoubleClickA.GetStateDown(handTypeR))
         {
