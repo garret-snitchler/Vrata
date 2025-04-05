@@ -2440,7 +2440,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08b58d19459971a4e9605ab55e90f569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numGemsUnlocked: 3
+  gemsUnlocked: 010101
   powerupNotAvailable: {fileID: 1930268904}
 --- !u!4 &1484742002
 Transform:
@@ -3213,8 +3213,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1213947815bc304428e5be9a84ed3429, type: 3}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: 4fff7f5c357b37f46b91a038de18bfed, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
