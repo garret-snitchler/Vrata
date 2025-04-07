@@ -11,7 +11,7 @@ public class PlayerHUD : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        setHealthText();
+        SetHealthText();
     }
 
     //// Update is called once per frame
@@ -20,13 +20,13 @@ public class PlayerHUD : MonoBehaviour
 
     //}
 
-    public void damagePlayer(int damage)
+    public void DamagePlayer(int damage)
     {
         health -= damage;
-        setHealthText();
+        SetHealthText();
     }
 
-    void setHealthText()
+    void SetHealthText()
     {
         if (healthText != null)
         {

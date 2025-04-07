@@ -6,7 +6,7 @@ using Valve.VR.InteractionSystem;
 public class Enemy : MonoBehaviour
 {
     public NavMeshAgent navAgent;
-    public Transform playerBody;
+    public Transform playerHead;
     public LayerMask groundLayer, playerLayer;
     public float health;
     public float walkPointRange;
@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        playerBody = GameObject.Find("PlayerCanWalk").transform.GetComponentInChildren<BodyCollider>().transform; // this assumes you are using PlayerCanWalk prefab, basically have the position use the player's main collider
+        playerHead = GameObject.Find("HeadCollider").transform;
         navAgent = GetComponent<NavMeshAgent>();
     }
 
@@ -87,7 +87,7 @@ public class Enemy : MonoBehaviour
 
     private void ChasePlayer()
     {
-        navAgent.SetDestination(playerBody.position);
+        navAgent.SetDestination(playerHead.position);
         animator.SetFloat("Velocity", 0.6f);
         navAgent.isStopped = false; // Add this line
     }
@@ -99,14 +99,14 @@ public class Enemy : MonoBehaviour
 
         if (!alreadyAttacked)
         {
-            print("attacking player");
-            transform.LookAt(playerBody.position);
+            print("Attacking player");
+            transform.LookAt(playerHead.position);
             alreadyAttacked = true;
             animator.SetBool("Attack", true);
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
 
             RaycastHit hit;
-            print("attempting to hit");
+            print("Attempting to hit");
             Debug.DrawRay(transform.position, transform.forward * attackRange, Color.green, 2.0f);
             if (Physics.Raycast(transform.position, transform.forward, out hit, attackRange, playerLayer))
             {
@@ -116,7 +116,7 @@ public class Enemy : MonoBehaviour
                 PlayerHUD playerHUD = hit.transform.GetComponentInParent<PlayerHUD>();
                 if (playerHUD != null)
                 {
-                    playerHUD.damagePlayer(damage);
+                    playerHUD.DamagePlayer(damage);
                 }
                 else
                 {
