@@ -7,7 +7,7 @@ public class PlayerHUD : MonoBehaviour
 {
     public int health;
     public int powerUpTime;
-    public TextMeshProUGUI healthText;
+    public TMPro.TextMeshPro healthText;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +28,7 @@ public class PlayerHUD : MonoBehaviour
 
     void SetHealthText()
     {
+        print(healthText);
         if (healthText != null)
         {
             print(health);
