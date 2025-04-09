@@ -81,7 +81,7 @@ namespace Valve.VR.InteractionSystem
 				}
 			}
 
-			return arrow;
+            return arrow;
 		}
 
 
