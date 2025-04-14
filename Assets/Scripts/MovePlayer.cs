@@ -24,8 +24,8 @@ public class MovePlayer : MonoBehaviour
     void Update()
     {
         // this would be used to stop the player from walking into things, needs tweaks to account for more directions than forwards
-        //RaycastHit hit;
-        //if (!(head.SweepTest(Player.instance.hmdTransform.TransformDirection(Vector3.forward), out hit, distance)))
+        RaycastHit hit;
+        if (!(head.SweepTest(Player.instance.hmdTransform.TransformDirection(Vector3.forward), out hit, distance)))
         {
             // get direction HMD is facing
             Vector3 direction = Player.instance.hmdTransform.TransformDirection(new Vector3(moveValue.axis.x, 0, moveValue.axis.y));
