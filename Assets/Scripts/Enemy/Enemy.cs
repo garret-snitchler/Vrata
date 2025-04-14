@@ -65,7 +65,7 @@ public class Enemy : MonoBehaviour
         }
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
-        animator.SetFloat("Velocity", 0.2f);
+        animator.SetFloat("SpeedMultiplier", 0.2f);
 
         if (distanceToWalkPoint.magnitude < 1f)
         {
@@ -88,7 +88,7 @@ public class Enemy : MonoBehaviour
     private void ChasePlayer()
     {
         navAgent.SetDestination(playerHead.position);
-        animator.SetFloat("Velocity", 0.6f);
+        animator.SetFloat("SpeedMultiplier", 0.6f);
         navAgent.isStopped = false; // Add this line
     }
 
