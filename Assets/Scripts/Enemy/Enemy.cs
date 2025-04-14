@@ -1,11 +1,12 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.AI;
+using Valve.VR.InteractionSystem;
 
 public class Enemy : MonoBehaviour
 {
     public NavMeshAgent navAgent;
-    public Transform player;
+    public Transform playerHead;
     public LayerMask groundLayer, playerLayer;
     public float health;
     public float walkPointRange;
@@ -24,7 +25,7 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        player = GameObject.Find("PlayerCanWalk").transform; // this has to be the player name
+        playerHead = GameObject.Find("HeadCollider").transform;
         navAgent = GetComponent<NavMeshAgent>();
     }
 
@@ -84,40 +85,46 @@ public class Enemy : MonoBehaviour
         }
     }
 
-   private void ChasePlayer()
-{
-    navAgent.SetDestination(player.position);
-    animator.SetFloat("Velocity", 0.6f);
-    navAgent.isStopped = false; // Add this line
-}
-
-
-  private void AttackPlayer()
-{
-    navAgent.SetDestination(transform.position);
-
-    if (!alreadyAttacked)
+    private void ChasePlayer()
     {
-        transform.LookAt(player.position);
-        alreadyAttacked = true;
-        animator.SetBool("Attack", true);
-        Invoke(nameof(ResetAttack), timeBetweenAttacks);
+        navAgent.SetDestination(playerHead.position);
+        animator.SetFloat("Velocity", 0.6f);
+        navAgent.isStopped = false; // Add this line
+    }
 
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, transform.forward, out hit, attackRange))
+
+    private void AttackPlayer()
+    {
+        navAgent.SetDestination(transform.position);
+
+        if (!alreadyAttacked)
         {
-            /*
-                YOU CAN USE THIS TO GET THE PLAYER HUD AND CALL THE TAKE DAMAGE FUNCTION
+            print("Attacking player");
+            transform.LookAt(playerHead.position);
+            alreadyAttacked = true;
+            animator.SetBool("Attack", true);
+            Invoke(nameof(ResetAttack), timeBetweenAttacks);
 
-            PlayerHUD playerHUD = hit.transform.GetComponent<PlayerHUD>();
-            if (playerHUD != null)
+            RaycastHit hit;
+            print("Attempting to hit");
+            Debug.DrawRay(transform.position, transform.forward * attackRange, Color.green, 2.0f);
+            if (Physics.Raycast(transform.position, transform.forward, out hit, attackRange + 1, playerLayer))
             {
-               playerHUD.takeDamage(damage);
+                print(hit.transform.ToString());
+                //YOU CAN USE THIS TO GET THE PLAYER HUD AND CALL THE TAKE DAMAGE FUNCTION
+
+                PlayerHUD playerHUD = hit.transform.GetComponentInParent<PlayerHUD>();
+                if (playerHUD != null)
+                {
+                    playerHUD.DamagePlayer(damage);
+                }
+                else
+                {
+                    print("PlayerHUD is null");
+                }
             }
-             */
         }
     }
-}
 
 
     private void ResetAttack()
