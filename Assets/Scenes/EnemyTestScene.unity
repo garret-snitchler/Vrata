@@ -7559,6 +7559,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyTemplate
       objectReference: {fileID: 0}
+    - target: {fileID: 2155053588245266890, guid: 251815459c6d88e47a21c8232efb3cfe, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3507973886355386243, guid: 251815459c6d88e47a21c8232efb3cfe, type: 3}
       propertyPath: player
       value: 
@@ -30433,9 +30437,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 681987240}
     - target: {fileID: 3830588234094075696, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 43c83277f0ed0be4a9902ad6459d54f4, type: 3}
+    - target: {fileID: 3830588234094075696, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: bea6d284a7410f145acd032ac2f1ba5e, type: 2}
+    - target: {fileID: 3830588234094075696, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8589531993619890418, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.6
@@ -30446,7 +30458,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8589531993619890418, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.66
+      value: -7.62
       objectReference: {fileID: 0}
     - target: {fileID: 8589531993619890418, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
       propertyPath: m_LocalRotation.w
