@@ -18,7 +18,7 @@ public class StaticPortal : MonoBehaviour
         {
             if (otherPortal != null)
             {
-                gameObject.transform.parent.parent.transform.position = otherPortal.transform.position;
+                GameObject.Find("Player").transform.position = otherPortal.transform.position;
                 gameObject.tag = "Portalled";
             } else
             {

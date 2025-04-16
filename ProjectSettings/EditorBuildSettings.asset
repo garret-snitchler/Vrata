@@ -8,6 +8,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Final Levels/Start.unity
     guid: 7fb340d9eef0d73408201c4e05a0c09d
+  - enabled: 1
+    path: Assets/Scenes/Final Levels/Earth.unity
+    guid: cb40eae2c21e6a14b8ae6413d8362efb
+  - enabled: 1
+    path: Assets/Scenes/Final Levels/Fire.unity
+    guid: 8c0bb8087343a60479d36d6fdbd029f4
+  - enabled: 1
+    path: Assets/Scenes/Final Levels/Water.unity
+    guid: 9cdfb851c126ae5438b31f8f48160856
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: eacab75461131a8499f32c6b422194be, type: 2}
     Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: 8f6b5398b6ee0c342b010dfeb1bf14ec, type: 2}
