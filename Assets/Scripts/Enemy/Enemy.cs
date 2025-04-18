@@ -111,7 +111,6 @@ public class Enemy : MonoBehaviour
             if (Physics.Raycast(transform.position, transform.forward, out hit, attackRange + 1, playerLayer))
             {
                 print(hit.transform.ToString());
-                //YOU CAN USE THIS TO GET THE PLAYER HUD AND CALL THE TAKE DAMAGE FUNCTION
 
                 PlayerHUD playerHUD = hit.transform.GetComponentInParent<PlayerHUD>();
                 if (playerHUD != null)
