@@ -81,7 +81,7 @@ MonoBehaviour:
     m_Bits: 128
   health: 100
   walkPointRange: 5
-  timeBetweenAttacks: 5
+  timeBetweenAttacks: 2
   sightRange: 5
   attackRange: 2
   damage: 1
