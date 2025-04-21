@@ -18586,6 +18586,10 @@ PrefabInstance:
       propertyPath: m_Icon
       value: 
       objectReference: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+    - target: {fileID: 121078, guid: 44664f23094845649a88eba1b9d10657, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 191996, guid: 44664f23094845649a88eba1b9d10657, type: 3}
       propertyPath: m_Icon
       value: 
@@ -19871,6 +19875,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1302887729}
   m_CullTransparentMesh: 1
+--- !u!1001 &1304180025
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2155053588245266890, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
+      propertyPath: m_Name
+      value: SlimeEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589531993619890418, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.08542919
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589531993619890418, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589531993619890418, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.695983
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589531993619890418, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589531993619890418, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589531993619890418, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589531993619890418, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589531993619890418, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589531993619890418, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589531993619890418, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
 --- !u!1 &1305303106
 GameObject:
   m_ObjectHideFlags: 0
@@ -30436,6 +30497,10 @@ PrefabInstance:
       propertyPath: playerHead
       value: 
       objectReference: {fileID: 681987240}
+    - target: {fileID: 3507973886355386243, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3830588234094075696, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
       propertyPath: m_Avatar
       value: 
@@ -30454,7 +30519,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8589531993619890418, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.45
+      value: 0.304
       objectReference: {fileID: 0}
     - target: {fileID: 8589531993619890418, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
       propertyPath: m_LocalPosition.z
@@ -31582,3 +31647,4 @@ SceneRoots:
   - {fileID: 1253556167}
   - {fileID: 528822972}
   - {fileID: 2071858878}
+  - {fileID: 1304180025}
