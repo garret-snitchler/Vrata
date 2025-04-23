@@ -1810,6 +1810,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5069410759554539065, guid: 953129182f8a0fa41873a11a4dbb3771, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 953129182f8a0fa41873a11a4dbb3771, type: 3}
       propertyPath: m_Name
       value: earthShell
@@ -1817,6 +1821,14 @@ PrefabInstance:
     - target: {fileID: 992249939279248830, guid: 953129182f8a0fa41873a11a4dbb3771, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.012
+      objectReference: {fileID: 0}
+    - target: {fileID: 1560763361117886322, guid: 953129182f8a0fa41873a11a4dbb3771, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1560763361117886322, guid: 953129182f8a0fa41873a11a4dbb3771, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1560763361117886322, guid: 953129182f8a0fa41873a11a4dbb3771, type: 3}
       propertyPath: m_Materials.Array.data[0]
