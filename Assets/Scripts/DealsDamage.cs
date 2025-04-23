@@ -22,7 +22,7 @@ public class DealsDamage : MonoBehaviour
             var script = coll.gameObject.GetComponent<Enemy>();
             if (script != null)
             {
-                script.health -= isPoweredUp ? powerupDamage : baseDamage;
+                script.TakeDamage(isPoweredUp ? powerupDamage : baseDamage);
             }
         }
     }
