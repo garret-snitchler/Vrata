@@ -316,9 +316,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 226c4030b4b576541b7324af3b108aa7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  maxHealth: 10
   powerUpTime: 10
   healthText: {fileID: 8514073850342956306}
+  RespawnScene: 
 --- !u!1 &109154
 GameObject:
   m_ObjectHideFlags: 0
