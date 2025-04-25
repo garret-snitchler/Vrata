@@ -16,15 +16,14 @@ public class StaticPortal : MonoBehaviour
         GameObject gameObject = collider.gameObject;
         if (gameObject.tag == "Player")
         {
-            if (otherPortal != null)
+            GameObject player = GameObject.Find("Player");
+            if (otherPortal != null && player != null)
             {
-                GameObject.Find("Player").transform.position = otherPortal.transform.position;
+                player.transform.position = otherPortal.transform.position;
+                //player.transform.rotation = otherPortal.transform.rotation;
                 gameObject.tag = "Portalled";
-            } else
-            {
-                print("Trigger scene change"); 
-                SceneManager.LoadScene(NextScene);
             }
+            StartCoroutine(waitThreeThenResetTag(gameObject));
         }
     }
 
