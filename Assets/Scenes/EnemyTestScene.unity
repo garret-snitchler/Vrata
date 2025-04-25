@@ -18656,7 +18656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1896014535586928631, guid: 44664f23094845649a88eba1b9d10657, type: 3}
       propertyPath: maxHealth
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1896014535586928631, guid: 44664f23094845649a88eba1b9d10657, type: 3}
       propertyPath: healthText
@@ -18665,6 +18665,10 @@ PrefabInstance:
     - target: {fileID: 1896014535586928631, guid: 44664f23094845649a88eba1b9d10657, type: 3}
       propertyPath: powerUpTime
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1896014535586928631, guid: 44664f23094845649a88eba1b9d10657, type: 3}
+      propertyPath: RespawnScene
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7005559815542067261, guid: 44664f23094845649a88eba1b9d10657, type: 3}
       propertyPath: m_CameraType

@@ -99,16 +99,13 @@ public class Enemy : MonoBehaviour
 
         if (!alreadyAttacked)
         {
-            print("Attacking player");
             transform.LookAt(playerHead.position);
             alreadyAttacked = true;
             animator.SetBool("Attack", true);
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
 
-            RaycastHit hit;
-            print("Attempting to hit");
             Debug.DrawRay(transform.position, transform.forward * attackRange, Color.green, 2.0f);
-            if (Physics.Raycast(transform.position, transform.forward, out hit, attackRange + 1, playerLayer))
+            if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, attackRange + 1, playerLayer))
             {
                 print(hit.transform.ToString());
 

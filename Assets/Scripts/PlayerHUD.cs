@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerHUD : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PlayerHUD : MonoBehaviour
     private int health;
     public int powerUpTime;
     public TMPro.TextMeshPro healthText;
+    public GameObject blackSquare;
     public string RespawnScene;
     // Start is called before the first frame update
     void Start()
@@ -24,7 +26,8 @@ public class PlayerHUD : MonoBehaviour
     {
         if (health <= 0)
         {
-            GameOver();
+            StartCoroutine(FadeBlackOutSquare());
+            Invoke(nameof(KillPlayer), 3);
         }
     }
 
@@ -55,19 +58,47 @@ public class PlayerHUD : MonoBehaviour
         }
     }
 
-    IEnumerator GameOver()
+    void KillPlayer()
     {
         if (RespawnScene != "" && RespawnScene != null)
         {
-            print("Respawn Scene: " + RespawnScene);
+            Destroy(gameObject);
             SceneManager.LoadScene(RespawnScene);
         }
         else
         {
-            print("Respawn scene not set, reloading current scene");
-            SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name);
-            yield return new WaitForEndOfFrame();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+            Destroy(gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+        StartCoroutine(FadeBlackOutSquare(false));
+    }
+
+    public IEnumerator FadeBlackOutSquare(bool fadeToBlack = true, int fadeSpeed = 3)
+    {
+        Color objectColor = blackSquare.GetComponent<Image>().color;
+        float fadeAmount;
+
+        if (fadeToBlack)
+        {
+            while (blackSquare.GetComponent<Image>().color.a < 1)
+            {
+                fadeAmount = objectColor.a + (fadeSpeed * Time.deltaTime);
+
+                objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
+                blackSquare.GetComponent<Image>().color = objectColor;
+                yield return null;
+            }
+        } else
+        {
+            while (blackSquare.GetComponent<Image>().color.a > 0)
+            {
+                fadeAmount = objectColor.a - (fadeSpeed * Time.deltaTime);
+
+                objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
+                blackSquare.GetComponent<Image>().color = objectColor;
+                yield return null;
+            }
+        }
+        yield return new WaitForEndOfFrame();
     }
 }
