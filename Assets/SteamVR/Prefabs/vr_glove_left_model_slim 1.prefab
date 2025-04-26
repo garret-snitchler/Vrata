@@ -48,10 +48,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -7470696596986629765, guid: a7050969d99f6d34782085eccb0556b0, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: fad1eadf5b103e94ebbe02490afe0503, type: 2}
     - target: {fileID: 919132149155446097, guid: a7050969d99f6d34782085eccb0556b0, type: 3}
       propertyPath: m_Name
       value: vr_glove_left_model_slim 1
