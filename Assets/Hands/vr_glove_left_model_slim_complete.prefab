@@ -84,7 +84,7 @@ PrefabInstance:
     - target: {fileID: -7470696596986629765, guid: 382190fce1c02ed48a27b563b4bd2f5e, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 7927821202470849677, guid: a7050969d99f6d34782085eccb0556b0, type: 3}
+      objectReference: {fileID: 7927821202470849677, guid: 382190fce1c02ed48a27b563b4bd2f5e, type: 3}
     - target: {fileID: -7470696596986629765, guid: 382190fce1c02ed48a27b563b4bd2f5e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -124,13 +124,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skeletonAction:
-    actionPath: 
+    actionPath: /actions/default/in/SkeletonLeftHand
     needsReinit: 0
   inputSource: 1
   rangeOfMotion: 1
   skeletonRoot: {fileID: 7429789280073096181}
   origin: {fileID: 0}
-  updatePose: 1
+  updatePose: 0
   onlySetRotations: 0
   skeletonBlend: 1
   onBoneTransformsUpdated:
