@@ -2467,9 +2467,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AudioSource: {fileID: 155476845664757355}
-  audioClip54: {fileID: 0}
-  audioClip56: {fileID: 0}
-  audioClip59: {fileID: 0}
+  audioClip54: {fileID: 8300000, guid: 3352a9460c9fc4ab0b7a84cebc30113c, type: 3}
+  audioClip56: {fileID: 8300000, guid: 0df1df6b0a03c4de4b2ecacae428821c, type: 3}
+  audioClip59: {fileID: 8300000, guid: b908d0df76e18480c94255b3819253d2, type: 3}
   Counter: 0
 --- !u!114 &3923877253086856867
 MonoBehaviour:
@@ -2484,16 +2484,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AudioSource: {fileID: 155476845664757355}
-  AudioClip22: {fileID: 0}
-  AudioClip25: {fileID: 0}
-  AudioClip21: {fileID: 0}
-  AudioClip2: {fileID: 0}
-  AudioClip32: {fileID: 0}
-  AudioClip37: {fileID: 0}
-  AudioClip39: {fileID: 0}
-  BossVoiceLine01: {fileID: 0}
-  BossVoiceLine02: {fileID: 0}
-  YouWin: {fileID: 0}
+  AudioClip22: {fileID: 8300000, guid: 3cc571b87f51e46cdb802c09477f433b, type: 3}
+  AudioClip25: {fileID: 8300000, guid: 2dd1606a06ed74a7aab9138a6723892c, type: 3}
+  AudioClip21: {fileID: 8300000, guid: 3eaadb7f050ab476b9b84580a97740cd, type: 3}
+  AudioClip2: {fileID: 8300000, guid: 93f2f3147e786474aac940471a32ffbe, type: 3}
+  AudioClip32: {fileID: 8300000, guid: dd0dbae4aee8848e5aa0bfb0a9630065, type: 3}
+  AudioClip37: {fileID: 8300000, guid: bc31b7cee1215416a940474d46440e47, type: 3}
+  AudioClip39: {fileID: 8300000, guid: 0bf41cb8bab5a458eaf9d729873c08db, type: 3}
+  BossVoiceLine01: {fileID: 8300000, guid: 720911d7b9a194fa98940c30e39cf837, type: 3}
+  BossVoiceLine02: {fileID: 8300000, guid: f50ed9c7784b247aebde4390dfeb48b6, type: 3}
+  YouWin: {fileID: 8300000, guid: 9150105acee8b42c582993881469d060, type: 3}
 --- !u!114 &6241126422317961091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2506,7 +2506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be06302763ffc254b9660fab32555468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioSource: {fileID: 0}
+  AudioSource: {fileID: 7890581866413921944}
   LabMusic: {fileID: 0}
   EarthMusic: {fileID: 0}
   FireMusicTop: {fileID: 0}
