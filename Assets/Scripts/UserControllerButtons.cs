@@ -26,7 +26,7 @@ public class UserControllerButtons : MonoBehaviour
 
     [Space]
     [Header("Dynamic Portal")]
-    public GameObject TeleportingAsset;
+    //public GameObject TeleportingAsset;
     public GameObject SnapTurnAsset;
     public GameObject worldParentPrefab; 
 
@@ -108,13 +108,18 @@ public class UserControllerButtons : MonoBehaviour
         portalMode = mode;
         if (portalMode)
         {
-            TeleportingAsset.SetActive(false);
+            //TeleportingAsset.SetActive(false);
             SnapTurnAsset.SetActive(false);
         }
         else
         {
-            TeleportingAsset.SetActive(true);
+            //TeleportingAsset.SetActive(true);
             SnapTurnAsset.SetActive(true);
         }
+    }
+
+    public bool IsInPortalMode()
+    {
+        return portalMode;
     }
 }
