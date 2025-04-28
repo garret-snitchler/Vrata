@@ -16,26 +16,47 @@ public class firstLabVoiceLineAudio : MonoBehaviour
     public AudioClip BossVoiceLine02;
     public AudioClip YouWin;
 
+    private int cloneCounter = 0;
+    private int weaponCounter = 0;
+    private int practiceCounter = 0;
+    private int portalCounter = 0;
+
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "CloneSight")
         {
-            AudioSource.PlayOneShot(AudioClip22);
+            if (cloneCounter == 0)
+            {
+                cloneCounter = 1;
+                AudioSource.PlayOneShot(AudioClip22);
+            }
         }
 
         if (other.tag == "WeaponSight")
         {
-            AudioSource.PlayOneShot(AudioClip25);
+            if (weaponCounter == 0)
+            {
+                weaponCounter = 1;
+                AudioSource.PlayOneShot(AudioClip25);
+            }
         }
 
         if (other.tag == "PracticeAreaSight")
         {
-            AudioSource.PlayOneShot(AudioClip21);
+            if (practiceCounter == 0)
+            {
+                practiceCounter = 1;
+                AudioSource.PlayOneShot(AudioClip21);
+            }
         }
 
         if (other.tag == "PortalInSight")
         {
-            AudioSource.PlayOneShot(AudioClip2);
+            if (portalCounter == 0)
+            {
+                portalCounter = 1;
+                AudioSource.PlayOneShot(AudioClip2);
+            }
         }
 
         if (other.tag == "Sword")

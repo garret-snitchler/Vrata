@@ -9,6 +9,20 @@ TagManager:
   - FxTemporaire
   - Portalled
   - Enemy
+  - Boulder
+  - Bow
+  - Sword
+  - Bomb
+  - CloneSight
+  - WeaponSight
+  - PracticeAreaSight
+  - PortalInSight
+  - EarthArea
+  - LabArea
+  - Boss
+  - WaterArea
+  - FireAreaBottom
+  - FireAreaTop
   layers:
   - Default
   - TransparentFX
