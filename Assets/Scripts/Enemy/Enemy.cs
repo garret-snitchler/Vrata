@@ -14,6 +14,9 @@ public class Enemy : MonoBehaviour
     public float sightRange;
     public float attackRange;
     public int damage;
+    public bool isRangedAttacker;
+    public float shotDuration;
+    public LineRenderer laserLine;
     public Animator animator;
     public ParticleSystem hitEffect;
 
@@ -27,6 +30,7 @@ public class Enemy : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         playerHead = GameObject.Find("HeadCollider").transform;
         navAgent = GetComponent<NavMeshAgent>();
+        laserLine = GetComponent<LineRenderer>();
     }
 
     private void Update()
@@ -104,11 +108,24 @@ public class Enemy : MonoBehaviour
             animator.SetBool("Attack", true);
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
 
-            Debug.DrawRay(transform.position, transform.forward * attackRange, Color.green, 2.0f);
+            Debug.DrawRay(transform.position, transform.forward * attackRange, Color.green, 0.5f);
             if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, attackRange + 1, playerLayer))
             {
                 print(hit.transform.ToString());
-
+                if (isRangedAttacker)
+                {
+                    StartCoroutine(ShotEffect());
+                    //Vector3 rayOrigin = fpsCam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.0f));
+                    laserLine.SetPosition(0, transform.position);
+                    //if (Physics.Raycast(rayOrigin, fpsCam.transform.forward, out hit, weaponRange))
+                    //{
+                    laserLine.SetPosition(1, hit.transform.position);
+                    //}
+                    //else
+                    //{
+                    //    laserLine.SetPosition(1, fpsCam.transform.forward * weaponRange);
+                    //}
+                }
                 PlayerHUD playerHUD = hit.transform.GetComponentInParent<PlayerHUD>();
                 if (playerHUD != null)
                 {
@@ -127,6 +144,14 @@ public class Enemy : MonoBehaviour
     {
         alreadyAttacked = false;
         animator.SetBool("Attack", false);
+    }
+
+    private IEnumerator ShotEffect()
+    {
+        //gunAudio.Play();
+        laserLine.enabled = true;
+        yield return shotDuration;
+        laserLine.enabled = false;
     }
 
     public void TakeDamage(float damage)
