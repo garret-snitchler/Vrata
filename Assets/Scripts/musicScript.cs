@@ -11,9 +11,16 @@ public class musicScript : MonoBehaviour
     public AudioClip FireMusicBottom;
     public AudioClip WaterMusic;
     public AudioClip BossMusic;
+    public AudioClip NatureMusic;
     void OnTriggerEnter(Collider other)
     {
 
+
+        if (other.tag == "NatureArea")
+        {
+            AudioSource.clip = NatureMusic;
+            AudioSource.Play();
+        }
 
         if (other.tag == "EarthArea")
         {
