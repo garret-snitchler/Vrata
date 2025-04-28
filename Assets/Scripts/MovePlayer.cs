@@ -16,6 +16,8 @@ public class MovePlayer : MonoBehaviour
     public float distance;
     // rigidbody used to determine when player close to collider
     public Rigidbody head;
+    //UserControllerButtons script
+    public UserControllerButtons userController;
 
     // current speed
     private float speed = 0.0f;
@@ -26,6 +28,7 @@ public class MovePlayer : MonoBehaviour
         // this would be used to stop the player from walking into things, needs tweaks to account for more directions than forwards
         //RaycastHit hit;
         //if (!(head.SweepTest(Player.instance.hmdTransform.TransformDirection(Vector3.forward), out hit, distance)))
+        if (userController.IsInPortalMode() == false)
         {
             // get direction HMD is facing
             Vector3 direction = Player.instance.hmdTransform.TransformDirection(new Vector3(moveValue.axis.x, 0, moveValue.axis.y));
