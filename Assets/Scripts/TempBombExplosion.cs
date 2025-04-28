@@ -9,7 +9,7 @@ public class TempBombExplosion : MonoBehaviour
         if (coll.gameObject.tag == "Enemy")
         {
             this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-            this.gameObject.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
+            this.gameObject.transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
             StartCoroutine(Kaboom());
         }
     }

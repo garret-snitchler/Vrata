@@ -32,10 +32,6 @@ public class WeaponHandler : MonoBehaviour
         {
             GetArrow().GetComponent<ArrowInteraction>().SetColor(arrowColor);
         }
-        else if (currentWeapon == Weapon.Boom)
-        {
-            //TODO: fill in
-        }
     }
 
     public void SwitchWeaponColor()
@@ -49,7 +45,7 @@ public class WeaponHandler : MonoBehaviour
                     currentWeaponObj.GetComponent<SwordInteraction>().ChangeColor(gemsUnlocked, n);
                     break;
                 case Weapon.Boom:
-                    //TODO: add boom color change
+                    currentWeaponObj.GetComponent<BoomSpawner>().ChangeColor(gemsUnlocked, n);
                     break;
                 case Weapon.Longbow:
                     arrowColor = GetArrow().GetComponent<ArrowInteraction>().ChangeColor(gemsUnlocked, n);
@@ -99,6 +95,19 @@ public class WeaponHandler : MonoBehaviour
                         powerupNotAvailable.Play();
                     }
                     break;
+                case Weapon.Boom:
+                    if (currentWeaponObj.GetComponent<BoomSpawner>().UsingSpecialBoom())
+                    {
+                        powerupAvailable = false;
+                        currentWeaponObj.GetComponent<BoomSpawner>().UsePowerup();
+                        StartCoroutine(Recharge());
+                    }
+                    else
+                    {
+                        print("boom powerup not available");
+                        powerupNotAvailable.Play();
+                    }
+                    break;
                 default:
                     break;
             }
@@ -126,6 +135,9 @@ public class WeaponHandler : MonoBehaviour
                 break;
             case Weapon.Longbow:
                 GetArrow().GetComponent<ArrowInteraction>().StopPowerup();
+                break;
+            case Weapon.Boom:
+                currentWeaponObj.GetComponent<BoomSpawner>().StopPowerup();
                 break;
             default:
                 break;
