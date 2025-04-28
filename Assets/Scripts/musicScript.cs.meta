@@ -3,7 +3,15 @@ guid: be06302763ffc254b9660fab32555468
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - AudioSource: {instanceID: 0}
+  - LabMusic: {fileID: 8300000, guid: 7ceb9d48d14f30d48adf878eb2ac7427, type: 3}
+  - EarthMusic: {fileID: 8300000, guid: 2cebef9710bbc634893ed7e02247d1fa, type: 3}
+  - FireMusicTop: {fileID: 8300000, guid: 631f3c53e0fe4a7469ea1a83ce915301, type: 3}
+  - FireMusicBottom: {fileID: 8300000, guid: d0defdaacb037d349b4dc186eb0c7544, type: 3}
+  - WaterMusic: {fileID: 8300000, guid: 4cd81290d05ee624985e02fe1a5f3d03, type: 3}
+  - BossMusic: {fileID: 8300000, guid: 2dc23088afed41043a6f745880b355b9, type: 3}
+  - NatureMusic: {fileID: 8300000, guid: a091acf243181c345920dd90ccbe1363, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
