@@ -13,7 +13,7 @@ public class PlayerHUD : MonoBehaviour
     public int powerUpTime;
     public TMPro.TextMeshPro healthText;
     public GameObject blackSquare;
-    public string RespawnScene;
+    public GameObject ValleySpawnPoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -60,16 +60,9 @@ public class PlayerHUD : MonoBehaviour
 
     void KillPlayer()
     {
-        if (RespawnScene != "" && RespawnScene != null)
-        {
-            Destroy(gameObject);
-            SceneManager.LoadScene(RespawnScene);
-        }
-        else
-        {
-            Destroy(gameObject);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
+        StartCoroutine(FadeBlackOutSquare(true));
+        this.gameObject.transform.position = ValleySpawnPoint.transform.position;
+        HealPlayer(10);
         StartCoroutine(FadeBlackOutSquare(false));
     }
 

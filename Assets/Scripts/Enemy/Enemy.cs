@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
     public float attackRange;
     public int damage;
     public Animator animator;
-    public ParticleSystem hitEffect;
+    //public ParticleSystem hitEffect;
 
     private Vector3 walkPoint;
     private bool walkPointSet;
@@ -132,7 +132,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
-        hitEffect.Play();
+        //hitEffect.Play();
         StartCoroutine(TakeDamageCoroutine());
 
         if (health <= 0)
@@ -157,7 +157,12 @@ public class Enemy : MonoBehaviour
     {
         animator.SetBool("Dead", true);
         yield return new WaitForSeconds(1.8f);
-        Destroy(gameObject);
+        this.gameObject.GetComponent<Enemy>().enabled = false;
+        this.gameObject.GetComponent<NavMeshAgent>().speed = 0;
+        this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        //animator.SetBool("Dead", false);
+        //Destroy(gameObject);
+        //this.gameObject.transform.GetChild(0).GetComponent<Animator>().enabled = false;
     }
 
     private void OnDrawGizmosSelected()

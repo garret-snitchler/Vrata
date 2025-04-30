@@ -22,6 +22,7 @@ public class DealsDamage : MonoBehaviour
             var script = coll.gameObject.GetComponent<Enemy>();
             if (script != null)
             {
+                print("Hit enemy with weapon");
                 script.TakeDamage(isPoweredUp ? powerupDamage : baseDamage);
             }
         }
