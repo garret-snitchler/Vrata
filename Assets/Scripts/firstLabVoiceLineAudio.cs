@@ -5,6 +5,7 @@ using UnityEngine;
 public class firstLabVoiceLineAudio : MonoBehaviour
 {
     public AudioSource AudioSource;
+    public AudioSource BossLine2AudioSource;
     public AudioClip AudioClip22;
     public AudioClip AudioClip25;
     public AudioClip AudioClip21;
@@ -15,11 +16,15 @@ public class firstLabVoiceLineAudio : MonoBehaviour
     public AudioClip BossVoiceLine01;
     public AudioClip BossVoiceLine02;
     public AudioClip YouWin;
+    public AudioClip AudioClip27;
 
     private int cloneCounter = 0;
     private int weaponCounter = 0;
     private int practiceCounter = 0;
     private int portalCounter = 0;
+    private int bossCounter = 0;
+
+    public float delay = 3;
 
     void OnTriggerEnter(Collider other)
     {
@@ -50,6 +55,19 @@ public class firstLabVoiceLineAudio : MonoBehaviour
             }
         }
 
+        if (other.tag == "Boss")
+        {
+            if (practiceCounter == 0)
+            {
+                bossCounter = 1;
+                AudioSource.PlayOneShot(BossVoiceLine01);
+                BossLine2AudioSource.clip = AudioClip27;
+                BossLine2AudioSource.PlayDelayed(delay);
+                BossLine2AudioSource.clip = BossVoiceLine02;
+                BossLine2AudioSource.PlayDelayed(delay);
+            }
+        }
+
         if (other.tag == "PortalInSight")
         {
             if (portalCounter == 0)
@@ -73,8 +91,6 @@ public class firstLabVoiceLineAudio : MonoBehaviour
         {
             AudioSource.PlayOneShot(AudioClip39);
         }
-
-
 
     }
 }

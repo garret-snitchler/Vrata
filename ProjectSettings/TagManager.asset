@@ -23,6 +23,12 @@ TagManager:
   - WaterArea
   - FireAreaBottom
   - FireAreaTop
+  - waterEnemyMajor
+  - waterEnemyMinor
+  - earthEnemyMajor
+  - earthEnemyMinor
+  - fireEnemyMajor
+  - fireEnemyMinor
   layers:
   - Default
   - TransparentFX
