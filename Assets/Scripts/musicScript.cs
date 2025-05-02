@@ -5,6 +5,7 @@ using UnityEngine;
 public class musicScript : MonoBehaviour
 {
     public AudioSource AudioSource;
+    public AudioSource VoiceBoxAudioSource;
     public AudioClip LabMusic;
     public AudioClip EarthMusic;
     public AudioClip FireMusicTop;
@@ -12,6 +13,13 @@ public class musicScript : MonoBehaviour
     public AudioClip WaterMusic;
     public AudioClip BossMusic;
     public AudioClip NatureMusic;
+    public AudioClip AudioClip52;
+    public AudioClip AudioClip17;
+    public AudioClip AudioClip10;
+
+    private int earthCounter = 0;
+    private int waterCounter = 0;
+    private int fireCounter = 0;
     void OnTriggerEnter(Collider other)
     {
 
@@ -26,12 +34,22 @@ public class musicScript : MonoBehaviour
         {
             AudioSource.clip = EarthMusic;
             AudioSource.Play();
+            if (earthCounter == 0)
+            {
+                earthCounter = 1;
+                VoiceBoxAudioSource.PlayOneShot(AudioClip52);
+            }
         }
 
         if (other.tag == "FireAreaTop")
         {
             AudioSource.clip = FireMusicTop;
             AudioSource.Play();
+            if (fireCounter == 0)
+            {
+                fireCounter = 1;
+                VoiceBoxAudioSource.PlayOneShot(AudioClip17);
+            }
         }
 
         if (other.tag == "FireAreaBottom")
@@ -44,6 +62,13 @@ public class musicScript : MonoBehaviour
         {
             AudioSource.clip = WaterMusic;
             AudioSource.Play();
+            AudioSource.clip = FireMusicTop;
+            AudioSource.Play();
+            if (waterCounter == 0)
+            {
+                waterCounter = 1;
+                VoiceBoxAudioSource.PlayOneShot(AudioClip10);
+            }
         }
 
         if (other.tag == "LabArea")

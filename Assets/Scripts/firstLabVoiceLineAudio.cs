@@ -17,14 +17,25 @@ public class firstLabVoiceLineAudio : MonoBehaviour
     public AudioClip BossVoiceLine02;
     public AudioClip YouWin;
     public AudioClip AudioClip27;
+    public AudioClip AudioClip30;
+    public AudioClip AudioClip38;
+    public AudioClip AudioClip49;
+
 
     private int cloneCounter = 0;
     private int weaponCounter = 0;
     private int practiceCounter = 0;
     private int portalCounter = 0;
     private int bossCounter = 0;
+    private int minorFireEnemyCounter = 0;
+    private int majorFireEnemyCounter = 0;
+    private int minorWaterEnemyCounter = 0;
+    private int majorWaterEnemyCounter = 0;
+    private int minorEarthEnemyCounter = 0;
+    private int majorEarthEnemyCounter = 0;
+   
 
-    public float delay = 3;
+    public float delay = 4;
 
     void OnTriggerEnter(Collider other)
     {
@@ -57,7 +68,7 @@ public class firstLabVoiceLineAudio : MonoBehaviour
 
         if (other.tag == "Boss")
         {
-            if (practiceCounter == 0)
+            if (bossCounter == 0)
             {
                 bossCounter = 1;
                 AudioSource.PlayOneShot(BossVoiceLine01);
@@ -65,6 +76,36 @@ public class firstLabVoiceLineAudio : MonoBehaviour
                 BossLine2AudioSource.PlayDelayed(delay);
                 BossLine2AudioSource.clip = BossVoiceLine02;
                 BossLine2AudioSource.PlayDelayed(delay);
+            }
+        }
+
+
+        if (other.tag == "waterEnemyMajor")
+        {
+            if (majorWaterEnemyCounter == 0)
+            {
+                majorWaterEnemyCounter = 1;
+                AudioSource.PlayOneShot(AudioClip30);
+            }
+        }
+
+        if (other.tag == "earthEnemyMajor")
+        {
+            if (majorEarthEnemyCounter == 0)
+            {
+                majorEarthEnemyCounter = 1;
+                AudioSource.PlayOneShot(AudioClip49);
+            }
+        }
+
+
+
+        if (other.tag == "fireEnemyMajor")
+        {
+            if (majorFireEnemyCounter == 0)
+            {
+                majorFireEnemyCounter = 1;
+                AudioSource.PlayOneShot(AudioClip38);
             }
         }
 
