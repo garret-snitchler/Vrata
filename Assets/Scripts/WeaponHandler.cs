@@ -151,7 +151,7 @@ public class WeaponHandler : MonoBehaviour
         return currentWeaponObj.transform.GetChild(0).GetChild(0).GetChild(0).gameObject;
     }
 
-    private int NumGemsUnlocked()
+    public int NumGemsUnlocked()
     {
         return gemsUnlocked.Count(b => b);
     }

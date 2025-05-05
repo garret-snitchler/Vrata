@@ -9,7 +9,8 @@ public class StaticPortal : MonoBehaviour
 {
     // currently just using this for the purpose of having one portal keep track of the portal it's paired with, other things can be added as needed
     public GameObject otherPortal; // this is the portal that is paired with this one
-    public string NextScene; 
+    public WeaponHandler weaponHandlerScript; 
+    public WinScript winScript;
 
     private void OnTriggerEnter(Collider collider)
     {
@@ -40,5 +41,12 @@ public class StaticPortal : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         gameObject.tag = "Player";
+
+        int count = weaponHandlerScript != null ? weaponHandlerScript.NumGemsUnlocked() : 0; 
+        if (otherPortal.name == "Spawn Point - Valley" && count == 3)
+        {
+            //You've won all three gems: initiate win sequence. 
+            winScript.InitializeBossFight(); 
+        }
     }
 }

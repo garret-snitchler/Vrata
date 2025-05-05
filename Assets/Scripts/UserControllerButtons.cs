@@ -35,7 +35,7 @@ public class UserControllerButtons : MonoBehaviour
     public Transform VRCamera;
     public WeaponHandler weaponHandlerScript;
 
-    private bool portalMode = false;
+    public bool portalMode = false;
     private GameObject parentPortal;
     private bool isOneTimePortal = true; 
 
