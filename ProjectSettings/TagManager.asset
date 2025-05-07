@@ -29,6 +29,7 @@ TagManager:
   - earthEnemyMinor
   - fireEnemyMajor
   - fireEnemyMinor
+  - Gem
   layers:
   - Default
   - TransparentFX

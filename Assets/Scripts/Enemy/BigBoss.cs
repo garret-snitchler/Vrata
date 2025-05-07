@@ -20,6 +20,7 @@ public class BigBoss : MonoBehaviour
             GameObject gem = Instantiate(gemPrefab, gemSpawnPoint.position, Quaternion.identity);
             gem.transform.GetChild(levelNum).gameObject.SetActive(true);
             gem.transform.SetParent(gemSpawnPoint);
+            gem.transform.SetParent(null);
             weaponHandlerScript.gemsUnlocked[levelNum] = true;
         }
     }

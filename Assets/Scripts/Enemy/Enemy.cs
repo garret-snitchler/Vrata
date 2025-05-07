@@ -160,9 +160,6 @@ public class Enemy : MonoBehaviour
         this.gameObject.GetComponent<Enemy>().enabled = false;
         this.gameObject.GetComponent<NavMeshAgent>().speed = 0;
         this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-        //animator.SetBool("Dead", false);
-        //Destroy(gameObject);
-        //this.gameObject.transform.GetChild(0).GetComponent<Animator>().enabled = false;
     }
 
     private void OnDrawGizmosSelected()

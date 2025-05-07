@@ -3665,7 +3665,6 @@ Transform:
   - {fileID: 808967368}
   - {fileID: 1834107388}
   - {fileID: 1174798874}
-  - {fileID: 773720130}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &157316388
@@ -5244,6 +5243,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlimeEnemy (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 3507973886355386243, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
+      propertyPath: playerHead
+      value: 
+      objectReference: {fileID: 2058639116}
     - target: {fileID: 8589531993619890418, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12.793076
@@ -9318,7 +9321,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8589531993619890418, guid: aea3d6ae8eebe6848842be84b78474e6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 399338835}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2155053588245266890, guid: aea3d6ae8eebe6848842be84b78474e6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1568106752}
   m_SourcePrefab: {fileID: 100100000, guid: aea3d6ae8eebe6848842be84b78474e6, type: 3}
 --- !u!4 &393971234 stripped
 Transform:
@@ -9554,6 +9560,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlimeEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3507973886355386243, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
+      propertyPath: playerHead
+      value: 
+      objectReference: {fileID: 2058639116}
     - target: {fileID: 8589531993619890418, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12.02858
@@ -10178,7 +10188,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GemsUnlocked: 0
-  gemsUnlocked: 010101
+  gemsUnlocked: 000000
   powerupNotAvailable: {fileID: 807889960}
 --- !u!4 &434499345
 Transform:
@@ -13671,12 +13681,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2155053588245266890, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
       propertyPath: m_Name
-      value: SlimeEnemy (9)
+      value: BigSlimeGuy
       objectReference: {fileID: 0}
     - target: {fileID: 3507973886355386243, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
       propertyPath: health
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 3507973886355386243, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
+      propertyPath: playerHead
+      value: 
+      objectReference: {fileID: 2058639116}
     - target: {fileID: 3507973886355386243, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
       propertyPath: sightRange
       value: 20
@@ -13740,7 +13754,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2155053588245266890, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1391304621}
   m_SourcePrefab: {fileID: 100100000, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
 --- !u!4 &633459705 stripped
 Transform:
@@ -14185,6 +14202,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlimeEnemy (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 3507973886355386243, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
+      propertyPath: playerHead
+      value: 
+      objectReference: {fileID: 2058639116}
     - target: {fileID: 8589531993619890418, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.39653
@@ -14274,6 +14295,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1753323758}
+  - {fileID: 773720130}
   m_Father: {fileID: 288452037}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &658708162
@@ -16700,7 +16722,7 @@ GameObject:
   m_Layer: 7
   m_Name: Gem Spawn Point
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2488908585195742037, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -16712,12 +16734,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 773720129}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.0555602, y: 1.098999, z: 1.9393325}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0.1859973, y: -0.069000244, z: 1.6779981}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 157316387}
+  m_Father: {fileID: 658708161}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &775140577
 PrefabInstance:
@@ -20084,6 +20106,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlimeEnemy (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3507973886355386243, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
+      propertyPath: playerHead
+      value: 
+      objectReference: {fileID: 2058639116}
     - target: {fileID: 8589531993619890418, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -19.251846
@@ -21101,6 +21127,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlimeEnemy (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3507973886355386243, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
+      propertyPath: playerHead
+      value: 
+      objectReference: {fileID: 2058639116}
     - target: {fileID: 8589531993619890418, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.210205
@@ -23386,6 +23416,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlimeEnemy (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3507973886355386243, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
+      propertyPath: playerHead
+      value: 
+      objectReference: {fileID: 2058639116}
     - target: {fileID: 8589531993619890418, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.981064
@@ -23816,6 +23850,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlimeEnemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3507973886355386243, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
+      propertyPath: playerHead
+      value: 
+      objectReference: {fileID: 2058639116}
     - target: {fileID: 8589531993619890418, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -16.524979
@@ -24762,6 +24800,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlimeEnemy (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 3507973886355386243, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
+      propertyPath: playerHead
+      value: 
+      objectReference: {fileID: 2058639116}
     - target: {fileID: 8589531993619890418, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.440781
@@ -31083,6 +31125,39 @@ Transform:
   - {fileID: 819244616}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1391304615 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2155053588245266890, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
+  m_PrefabInstance: {fileID: 633459704}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1391304619 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3507973886355386243, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
+  m_PrefabInstance: {fileID: 633459704}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1391304615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a42f9e12bbc30fb4da3100a07bea3292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1391304621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1391304615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b6a91716365f54fa16e5d40cd62b1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyScript: {fileID: 1391304619}
+  gemPrefab: {fileID: 6230376527233447256, guid: 9181b0500210ca34e8479823d91a7959, type: 3}
+  gemSpawnPoint: {fileID: 773720130}
+  levelNum: 0
+  weaponHandlerScript: {fileID: 434499344}
 --- !u!1001 &1392330198
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35139,6 +35214,39 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1566410473}
   m_Mesh: {fileID: -4667166186235472434, guid: 866b9650b1e22fc4086389666913b1ce, type: 3}
+--- !u!1 &1568106745 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2155053588245266890, guid: aea3d6ae8eebe6848842be84b78474e6, type: 3}
+  m_PrefabInstance: {fileID: 393796773}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1568106750 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3507973886355386243, guid: aea3d6ae8eebe6848842be84b78474e6, type: 3}
+  m_PrefabInstance: {fileID: 393796773}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568106745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a42f9e12bbc30fb4da3100a07bea3292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1568106752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568106745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b6a91716365f54fa16e5d40cd62b1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyScript: {fileID: 1568106750}
+  gemPrefab: {fileID: 6230376527233447256, guid: 9181b0500210ca34e8479823d91a7959, type: 3}
+  gemSpawnPoint: {fileID: 773720130}
+  levelNum: 2
+  weaponHandlerScript: {fileID: 434499344}
 --- !u!4 &1575839554 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3872834285885455437, guid: 9df7bf41b8e9823488f7c5518c522156, type: 3}
@@ -40865,6 +40973,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlimeEnemy (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 3507973886355386243, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
+      propertyPath: playerHead
+      value: 
+      objectReference: {fileID: 2058639116}
     - target: {fileID: 8589531993619890418, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.450485
