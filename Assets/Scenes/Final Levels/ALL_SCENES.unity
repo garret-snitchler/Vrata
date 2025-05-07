@@ -3413,6 +3413,7 @@ GameObject:
   - component: {fileID: 157316380}
   - component: {fileID: 157316379}
   - component: {fileID: 157316388}
+  - component: {fileID: 157316389}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -3684,6 +3685,23 @@ MonoBehaviour:
   healthText: {fileID: 117755124}
   blackSquare: {fileID: 28405688}
   ValleySpawnPoint: {fileID: 1585436468}
+--- !u!114 &157316389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157316378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b0ff5269649e2b4f856e560d7949469, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AudioSource: {fileID: 0}
+  audioClip54: {fileID: 8300000, guid: 3352a9460c9fc4ab0b7a84cebc30113c, type: 3}
+  audioClip56: {fileID: 8300000, guid: 0df1df6b0a03c4de4b2ecacae428821c, type: 3}
+  audioClip59: {fileID: 8300000, guid: b908d0df76e18480c94255b3819253d2, type: 3}
+  Counter: 0
 --- !u!1001 &157611798
 PrefabInstance:
   m_ObjectHideFlags: 0
