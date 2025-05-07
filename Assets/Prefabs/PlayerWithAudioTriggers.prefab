@@ -2385,6 +2385,7 @@ MonoBehaviour:
   worldParentPrefab: {fileID: 265514746121637497, guid: 345ddcbbdf3b88442b960236280eadc7, type: 3}
   VRCamera: {fileID: 3225656239293236205}
   weaponHandlerScript: {fileID: 3253980646397509397}
+  portalMode: 0
 --- !u!114 &5041167894472093831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2475,7 +2476,7 @@ MonoBehaviour:
   AudioClip2: {fileID: 8300000, guid: 93f2f3147e786474aac940471a32ffbe, type: 3}
   AudioClip32: {fileID: 8300000, guid: dd0dbae4aee8848e5aa0bfb0a9630065, type: 3}
   AudioClip37: {fileID: 8300000, guid: bc31b7cee1215416a940474d46440e47, type: 3}
-  AudioClip39: {fileID: 8300000, guid: 0bf41cb8bab5a458eaf9d729873c08db, type: 3}
+  AudioClip39: {fileID: 8300000, guid: 422ced2788b745f4b8ecacc324068eb0, type: 3}
   BossVoiceLine01: {fileID: 8300000, guid: 720911d7b9a194fa98940c30e39cf837, type: 3}
   BossVoiceLine02: {fileID: 8300000, guid: f50ed9c7784b247aebde4390dfeb48b6, type: 3}
   YouWin: {fileID: 8300000, guid: 9150105acee8b42c582993881469d060, type: 3}
@@ -3446,7 +3447,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08b58d19459971a4e9605ab55e90f569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gemsUnlocked: 010101
+  GemsUnlocked: 0
+  gemsUnlocked: 
   powerupNotAvailable: {fileID: 9158951115838672654}
 --- !u!1 &8235440821639163624
 GameObject:
@@ -3457,6 +3459,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6085901593981118743}
+  - component: {fileID: 5164614738329705951}
   m_Layer: 0
   m_Name: PlayerWithAudioTriggers
   m_TagString: Untagged
@@ -3480,6 +3483,21 @@ Transform:
   - {fileID: 3225656239293258749}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5164614738329705951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8235440821639163624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44447b7604605c449afc36580093dc3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audiosource: {fileID: 6502186297593410627}
+  winclip: {fileID: 8300000, guid: 9150105acee8b42c582993881469d060, type: 3}
+  win: 0
 --- !u!1 &8634085457860272190
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ public class WeaponHandler : MonoBehaviour
     private Weapon? currentWeapon = null;
     private Hand? currentHand = null;
     private GameObject? currentWeaponObj = null;
+    public int GemsUnlocked = 0;
 
     public List<bool> gemsUnlocked = new List<bool> { false, false, false };
 
@@ -151,7 +152,7 @@ public class WeaponHandler : MonoBehaviour
         return currentWeaponObj.transform.GetChild(0).GetChild(0).GetChild(0).gameObject;
     }
 
-    private int NumGemsUnlocked()
+    public int NumGemsUnlocked()
     {
         return gemsUnlocked.Count(b => b);
     }

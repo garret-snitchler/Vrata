@@ -33,7 +33,10 @@ public class firstLabVoiceLineAudio : MonoBehaviour
     private int majorWaterEnemyCounter = 0;
     private int minorEarthEnemyCounter = 0;
     private int majorEarthEnemyCounter = 0;
-   
+
+    private int swordCounter = 0;
+    private int bombCounter = 0;
+    private int bowCounter = 0;
 
     public float delay = 4;
 
@@ -120,17 +123,41 @@ public class firstLabVoiceLineAudio : MonoBehaviour
 
         if (other.tag == "Sword")
         {
-            AudioSource.PlayOneShot(AudioClip32);
+            if (swordCounter == 0)
+            {
+                AudioSource.PlayOneShot(AudioClip32);
+            }
+            if (swordCounter == 2)
+            {
+                AudioSource.PlayOneShot(AudioClip32);
+            }
+            swordCounter += 1;
         }
 
         if (other.tag == "Bow")
         {
-            AudioSource.PlayOneShot(AudioClip37);
+            if (bowCounter == 0)
+            {
+                AudioSource.PlayOneShot(AudioClip37);
+            }
+            if (bowCounter == 2)
+            {
+                AudioSource.PlayOneShot(AudioClip37);
+            }
+            bowCounter += 1;
         }
 
         if (other.tag == "Bomb")
         {
-            AudioSource.PlayOneShot(AudioClip39);
+            if (bombCounter == 0)
+            {
+                AudioSource.PlayOneShot(AudioClip39);
+            }
+            if (bombCounter == 2)
+            {
+                AudioSource.PlayOneShot(AudioClip39);
+            }
+            bombCounter += 1;
         }
 
     }
