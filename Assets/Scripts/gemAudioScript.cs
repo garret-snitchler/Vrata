@@ -9,6 +9,7 @@ public class audio_Script : MonoBehaviour
     public AudioClip audioClip54;
     public AudioClip audioClip56;
     public AudioClip audioClip59;
+    public AudioClip audioClipDing;
     public int Counter = 0;
 
     void OnTriggerEnter(Collider other)
