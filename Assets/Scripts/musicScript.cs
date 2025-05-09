@@ -20,6 +20,12 @@ public class musicScript : MonoBehaviour
     private int earthCounter = 0;
     private int waterCounter = 0;
     private int fireCounter = 0;
+
+    private void Start()
+    {
+        AudioSource.clip = LabMusic;
+        AudioSource.Play();
+    }
     void OnTriggerEnter(Collider other)
     {
 
