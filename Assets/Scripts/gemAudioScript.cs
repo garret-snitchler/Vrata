@@ -10,7 +10,10 @@ public class audio_Script : MonoBehaviour
     public AudioClip audioClip56;
     public AudioClip audioClip59;
     public AudioClip audioClipDing;
+    public AudioSource AudioSource2;
+    public AudioClip magicInstruction;
     public int Counter = 0;
+    public float delay = 5;
 
     private void Start()
     {
@@ -31,6 +34,8 @@ public class audio_Script : MonoBehaviour
             {
                 AudioSource.PlayOneShot(audioClip56);
                 Counter = 2 ;
+                AudioSource2.clip = magicInstruction;
+                AudioSource2.PlayDelayed(delay);
             }
 
             if (Counter == 0)
