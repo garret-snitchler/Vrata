@@ -4234,6 +4234,9 @@ MonoBehaviour:
   AudioSource2: {fileID: 745585174}
   magicInstruction: {fileID: 8300000, guid: 1a60710b9e36b4941b79afc48879cedb, type: 3}
   Counter: 0
+  FireCounter: 0
+  WaterCounter: 0
+  EarthCounter: 0
   delay: 5
 --- !u!136 &157316382
 CapsuleCollider:
