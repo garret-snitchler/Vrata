@@ -4202,7 +4202,7 @@ MonoBehaviour:
   AudioClip2: {fileID: 8300000, guid: 93f2f3147e786474aac940471a32ffbe, type: 3}
   AudioClip32: {fileID: 8300000, guid: dd0dbae4aee8848e5aa0bfb0a9630065, type: 3}
   AudioClip37: {fileID: 8300000, guid: bc31b7cee1215416a940474d46440e47, type: 3}
-  AudioClip39: {fileID: 8300000, guid: 0bf41cb8bab5a458eaf9d729873c08db, type: 3}
+  AudioClip39: {fileID: 8300000, guid: 422ced2788b745f4b8ecacc324068eb0, type: 3}
   BossVoiceLine01: {fileID: 8300000, guid: 720911d7b9a194fa98940c30e39cf837, type: 3}
   BossVoiceLine02: {fileID: 8300000, guid: f50ed9c7784b247aebde4390dfeb48b6, type: 3}
   YouWin: {fileID: 8300000, guid: 9150105acee8b42c582993881469d060, type: 3}
