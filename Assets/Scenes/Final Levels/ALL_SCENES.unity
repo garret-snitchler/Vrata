@@ -1072,7 +1072,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -4153,7 +4153,6 @@ GameObject:
   - component: {fileID: 157316380}
   - component: {fileID: 157316379}
   - component: {fileID: 157316388}
-  - component: {fileID: 157316389}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -4175,16 +4174,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AudioSource: {fileID: 1298251280}
   VoiceBoxAudioSource: {fileID: 0}
-  LabMusic: {fileID: 0}
-  EarthMusic: {fileID: 0}
-  FireMusicTop: {fileID: 0}
-  FireMusicBottom: {fileID: 0}
-  WaterMusic: {fileID: 0}
-  BossMusic: {fileID: 0}
-  NatureMusic: {fileID: 0}
-  AudioClip52: {fileID: 0}
-  AudioClip17: {fileID: 0}
-  AudioClip10: {fileID: 0}
+  LabMusic: {fileID: 8300000, guid: 7ceb9d48d14f30d48adf878eb2ac7427, type: 3}
+  EarthMusic: {fileID: 8300000, guid: 2cebef9710bbc634893ed7e02247d1fa, type: 3}
+  FireMusicTop: {fileID: 8300000, guid: 631f3c53e0fe4a7469ea1a83ce915301, type: 3}
+  FireMusicBottom: {fileID: 8300000, guid: d0defdaacb037d349b4dc186eb0c7544, type: 3}
+  WaterMusic: {fileID: 8300000, guid: 4cd81290d05ee624985e02fe1a5f3d03, type: 3}
+  BossMusic: {fileID: 8300000, guid: 2dc23088afed41043a6f745880b355b9, type: 3}
+  NatureMusic: {fileID: 8300000, guid: a091acf243181c345920dd90ccbe1363, type: 3}
+  AudioClip52: {fileID: 8300000, guid: fefcd467497e244bca43a22cb29c9c60, type: 3}
+  AudioClip17: {fileID: 8300000, guid: bad861d20494c4523b7e060decb39e63, type: 3}
+  AudioClip10: {fileID: 8300000, guid: 4b8f3f8ea5d56445e9cdb90f018ed071, type: 3}
 --- !u!114 &157316380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4209,11 +4208,12 @@ MonoBehaviour:
   BossVoiceLine01: {fileID: 8300000, guid: 720911d7b9a194fa98940c30e39cf837, type: 3}
   BossVoiceLine02: {fileID: 8300000, guid: f50ed9c7784b247aebde4390dfeb48b6, type: 3}
   YouWin: {fileID: 8300000, guid: 9150105acee8b42c582993881469d060, type: 3}
-  AudioClip27: {fileID: 0}
-  AudioClip30: {fileID: 0}
-  AudioClip38: {fileID: 0}
-  AudioClip49: {fileID: 0}
-  delay: 3
+  AudioClip27: {fileID: 8300000, guid: 47eec75dadf054a1ab46349829ac02ff, type: 3}
+  AudioClip30: {fileID: 8300000, guid: b2feb1bdfaa0d4e2d89f00edbbfb8457, type: 3}
+  AudioClip38: {fileID: 8300000, guid: 4440b51075b1d4128a802e1f2188800e, type: 3}
+  AudioClip49: {fileID: 8300000, guid: c978535bc3c8f4b14a1b61211c6e9cf7, type: 3}
+  PortalInfo: {fileID: 8300000, guid: d747fa92d6bda6741a9d4c0d2a23b301, type: 3}
+  delay: 3.5
 --- !u!114 &157316381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4426,24 +4426,6 @@ MonoBehaviour:
   healthText: {fileID: 117755124}
   blackSquare: {fileID: 28405688}
   ValleySpawnPoint: {fileID: 1585436468}
---- !u!114 &157316389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 157316378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b0ff5269649e2b4f856e560d7949469, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AudioSource: {fileID: 0}
-  audioClip54: {fileID: 8300000, guid: 3352a9460c9fc4ab0b7a84cebc30113c, type: 3}
-  audioClip56: {fileID: 8300000, guid: 0df1df6b0a03c4de4b2ecacae428821c, type: 3}
-  audioClip59: {fileID: 8300000, guid: b908d0df76e18480c94255b3819253d2, type: 3}
-  audioClipDing: {fileID: 0}
-  Counter: 0
 --- !u!1001 &157611798
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32382,7 +32364,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 7ceb9d48d14f30d48adf878eb2ac7427, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

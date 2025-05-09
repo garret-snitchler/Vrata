@@ -12,6 +12,10 @@ public class audio_Script : MonoBehaviour
     public AudioClip audioClipDing;
     public int Counter = 0;
 
+    private void Start()
+    {
+    Counter = 0;
+    }
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Gem")
@@ -20,19 +24,19 @@ public class audio_Script : MonoBehaviour
             if (Counter == 2)
             {
                 AudioSource.PlayOneShot(audioClip59);
-                Counter += 1;
+                Counter = 3;
             }
 
             if (Counter == 1)
             {
                 AudioSource.PlayOneShot(audioClip56);
-                Counter += 1;
+                Counter = 2 ;
             }
 
             if (Counter == 0)
             {
                 AudioSource.PlayOneShot(audioClip54);
-                Counter += 1;
+                Counter = 1;
             }
         }
 
