@@ -20,7 +20,7 @@ MonoBehaviour:
     x: 770
     y: -74
     width: 2361
-    height: 2223
+    height: 2187
 --- !u!114 &114350483966674976
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -64,7 +64,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1
+      m_SerializableObject: 0.5
     min: -Infinity
     max: Infinity
     enumValues: []
@@ -732,7 +732,7 @@ MonoBehaviour:
   m_Parent: {fileID: 114350483966674976}
   m_Children:
   - {fileID: 8926484042661615032}
-  m_UIPosition: {x: 1284, y: 876}
+  m_UIPosition: {x: 1273, y: 865}
   m_UICollapsed: 0
   m_UISuperCollapsed: 0
   m_InputSlots: []
@@ -1412,7 +1412,7 @@ MonoBehaviour:
       m_Type:
         m_SerializableType: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral,
           PublicKeyToken=b77a5c561934e089
-      m_SerializableObject: 1
+      m_SerializableObject: 0.5
     m_Space: 2147483647
   m_Property:
     name: o
@@ -1584,8 +1584,7 @@ MonoBehaviour:
   castShadows: 0
   useExposureWeight: 0
   needsOwnSort: 0
-  shaderGraph: {fileID: 4333940904281232215, guid: 835787bb43605374c95b9f75458a050b,
-    type: 3}
+  shaderGraph: {fileID: 4333940904281232215, guid: 835787bb43605374c95b9f75458a050b, type: 3}
   materialSettings:
     m_PropertyNames:
     - _QueueOffset
@@ -2435,8 +2434,7 @@ MonoBehaviour:
   castShadows: 0
   useExposureWeight: 0
   needsOwnSort: 0
-  shaderGraph: {fileID: 4333940904281232215, guid: 835787bb43605374c95b9f75458a050b,
-    type: 3}
+  shaderGraph: {fileID: 4333940904281232215, guid: 835787bb43605374c95b9f75458a050b, type: 3}
   materialSettings:
     m_PropertyNames:
     - _QueueOffset
@@ -3423,8 +3421,7 @@ MonoBehaviour:
   castShadows: 0
   useExposureWeight: 0
   needsOwnSort: 0
-  shaderGraph: {fileID: 4333940904281232215, guid: 835787bb43605374c95b9f75458a050b,
-    type: 3}
+  shaderGraph: {fileID: 4333940904281232215, guid: 835787bb43605374c95b9f75458a050b, type: 3}
   materialSettings:
     m_PropertyNames:
     - _QueueOffset
@@ -4274,8 +4271,7 @@ MonoBehaviour:
   castShadows: 0
   useExposureWeight: 0
   needsOwnSort: 0
-  shaderGraph: {fileID: 4333940904281232215, guid: 835787bb43605374c95b9f75458a050b,
-    type: 3}
+  shaderGraph: {fileID: 4333940904281232215, guid: 835787bb43605374c95b9f75458a050b, type: 3}
   materialSettings:
     m_PropertyNames:
     - _QueueOffset

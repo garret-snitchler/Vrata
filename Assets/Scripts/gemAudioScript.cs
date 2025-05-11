@@ -16,7 +16,7 @@ public class audio_Script : MonoBehaviour
     public int FireCounter = 0;
     public int WaterCounter = 0;
     public int EarthCounter = 0;
-    public float delay = 5;
+    public float delay = 13;
 
     private void Start()
     {

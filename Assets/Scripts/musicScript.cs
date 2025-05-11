@@ -21,6 +21,8 @@ public class musicScript : MonoBehaviour
     private int waterCounter = 0;
     private int fireCounter = 0;
 
+    private int otherMusicTrigger = 0;
+
     private void Start()
     {
         AudioSource.clip = LabMusic;
@@ -32,14 +34,21 @@ public class musicScript : MonoBehaviour
 
         if (other.tag == "NatureArea")
         {
-            AudioSource.clip = NatureMusic;
-            AudioSource.Play();
+            if (otherMusicTrigger == 0)
+            {
+                
+                VoiceBoxAudioSource.PlayOneShot(AudioClip17);
+                AudioSource.clip = NatureMusic;
+                AudioSource.Play();
+                otherMusicTrigger = 1;
+            }
         }
 
         if (other.tag == "EarthArea")
         {
             AudioSource.clip = EarthMusic;
             AudioSource.Play();
+            otherMusicTrigger = 0;
             if (earthCounter == 0)
             {
                 earthCounter = 1;
@@ -51,6 +60,7 @@ public class musicScript : MonoBehaviour
         {
             AudioSource.clip = FireMusicTop;
             AudioSource.Play();
+            otherMusicTrigger = 0;
             if (fireCounter == 0)
             {
                 fireCounter = 1;
@@ -62,18 +72,18 @@ public class musicScript : MonoBehaviour
         {
             AudioSource.clip = FireMusicBottom;
             AudioSource.Play();
+            otherMusicTrigger = 0;
         }
 
         if (other.tag == "WaterArea")
         {
             AudioSource.clip = WaterMusic;
             AudioSource.Play();
-            AudioSource.clip = FireMusicTop;
-            AudioSource.Play();
             if (waterCounter == 0)
             {
                 waterCounter = 1;
                 VoiceBoxAudioSource.PlayOneShot(AudioClip10);
+                otherMusicTrigger = 0;
             }
         }
 
@@ -81,6 +91,7 @@ public class musicScript : MonoBehaviour
         {
             AudioSource.clip = LabMusic;
             AudioSource.Play();
+            otherMusicTrigger = 0;
         }
 
         if (other.tag == "Boss")

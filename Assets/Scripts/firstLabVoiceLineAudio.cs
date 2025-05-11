@@ -171,7 +171,7 @@ public class firstLabVoiceLineAudio : MonoBehaviour
             {
                 AudioSource.PlayOneShot(PortalInfo);
             }
-            swordCounter += 1;
+            portalInfoCounter += 1;
         }
 
     }
