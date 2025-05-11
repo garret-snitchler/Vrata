@@ -4417,6 +4417,8 @@ MonoBehaviour:
   blackSquare: {fileID: 1825479447}
   gameOverSpawnPoint: {fileID: 1347785533}
   valleySpawnPoint: {fileID: 1585436468}
+  PlayerDies: {fileID: 8300000, guid: a788b68784e6f4a558980614ca247ddf, type: 3}
+  VoiceBox: {fileID: 1184759491}
 --- !u!1001 &157611798
 PrefabInstance:
   m_ObjectHideFlags: 0
