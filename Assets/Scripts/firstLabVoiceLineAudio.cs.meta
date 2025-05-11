@@ -18,7 +18,9 @@ MonoImporter:
   - YouWin: {fileID: 8300000, guid: 9150105acee8b42c582993881469d060, type: 3}
   - AudioClip27: {fileID: 8300000, guid: 47eec75dadf054a1ab46349829ac02ff, type: 3}
   - AudioClip30: {fileID: 8300000, guid: b2feb1bdfaa0d4e2d89f00edbbfb8457, type: 3}
+  - AudioClip38: {fileID: 8300000, guid: 4440b51075b1d4128a802e1f2188800e, type: 3}
   - AudioClip49: {fileID: 8300000, guid: c978535bc3c8f4b14a1b61211c6e9cf7, type: 3}
+  - PortalInfo: {fileID: 8300000, guid: d747fa92d6bda6741a9d4c0d2a23b301, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
