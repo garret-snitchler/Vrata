@@ -30,6 +30,7 @@ TagManager:
   - fireEnemyMajor
   - fireEnemyMinor
   - Gem
+  - Button
   - FireGem
   - WaterGem
   - EarthGem

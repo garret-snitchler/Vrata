@@ -13,10 +13,12 @@ public class PlayerHUD : MonoBehaviour
     public int powerUpTime;
     public TMPro.TextMeshPro healthText;
     public GameObject blackSquare;
-    public GameObject ValleySpawnPoint;
+    public GameObject gameOverSpawnPoint;
+    public GameObject valleySpawnPoint;
 
     private bool killPlayerBool = false;
 
+    // Start is called before the first frame update
     void Start()
     {
         health = maxHealth;
@@ -71,6 +73,18 @@ public class PlayerHUD : MonoBehaviour
         StartCoroutine(FadeBlackOutSquare(true, true));
     }
 
+    public void RespawnPlayer()
+    {
+        StartCoroutine(FadeBlackOutSquare(true));
+        StartCoroutine(DelayRespawn());
+    }
+
+    public IEnumerator DelayRespawn()
+    {
+        yield return new WaitForSeconds(2.5f);
+        this.gameObject.transform.position = valleySpawnPoint.transform.position;
+    }
+
     public IEnumerator FadeBlackOutSquare(bool fadeToBlack = true, bool playerKilled = false)
     {
         Color objectColor = blackSquare.GetComponent<Image>().color;
@@ -106,7 +120,7 @@ public class PlayerHUD : MonoBehaviour
 
         if (playerKilled && fadeToBlack)
         {
-            this.gameObject.transform.position = ValleySpawnPoint.transform.position;
+            this.gameObject.transform.position = gameOverSpawnPoint.transform.position;
             HealPlayer(10);
         } 
 
