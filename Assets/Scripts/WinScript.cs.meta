@@ -3,7 +3,10 @@ guid: 44447b7604605c449afc36580093dc3f
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - audiosource: {instanceID: 0}
+  - winclip: {fileID: 8300000, guid: 9150105acee8b42c582993881469d060, type: 3}
+  - BBEG: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

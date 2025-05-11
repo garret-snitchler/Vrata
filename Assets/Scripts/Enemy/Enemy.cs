@@ -17,6 +17,10 @@ public class Enemy : MonoBehaviour
     public Animator animator;
     //public ParticleSystem hitEffect;
 
+    //Liv added
+    public AudioClip[] evilClips;
+    public AudioSource enemySoundSource;
+
     private Vector3 walkPoint;
     private bool walkPointSet;
     private bool alreadyAttacked;
@@ -168,5 +172,10 @@ public class Enemy : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRange);
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
+    }
+
+    private void RandomizeEnemySound()
+    {
+        ene
     }
 }
