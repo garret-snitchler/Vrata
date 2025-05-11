@@ -13,6 +13,8 @@ public class DynamicPortal : MonoBehaviour
     public GameObject VortexBack;
     public AudioClip PortalNoise;
     public AudioSource PortalSource;
+    public AudioClip PortalMoveUp;
+    public AudioClip PortalMoveSide;
 
     private bool isOneTime = true;
     private bool isActive = false;
@@ -53,11 +55,13 @@ public class DynamicPortal : MonoBehaviour
         else if (isVertical)
         {
             print("is vertical"); 
-            rigidbody.AddRelativeForce(new Vector3(0, movement.y, 0)); 
+            rigidbody.AddRelativeForce(new Vector3(0, movement.y, 0));
+            PortalSource.PlayOneShot(PortalMoveUp);
         }
         else
         {
             rigidbody.AddRelativeForce(new Vector3(-movement.y, 0, movement.x));
+            PortalSource.PlayOneShot(PortalMoveSide);
         }
     }
 
