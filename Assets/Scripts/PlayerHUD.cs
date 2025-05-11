@@ -39,7 +39,7 @@ public class PlayerHUD : MonoBehaviour
             VoiceBox.PlayOneShot(PlayerDies);
         }
 
-        if (rb.velocity.y < 0.1f)
+        if (rb.velocity.y < -1f)
         {
             isFalling = true; 
             if (!fallingFadeInProgress)
@@ -51,8 +51,6 @@ public class PlayerHUD : MonoBehaviour
         {
             isFalling = false; 
         }
-
-        print(isFalling);
     }
 
     public void HealPlayer(int heal)
@@ -169,7 +167,7 @@ public class PlayerHUD : MonoBehaviour
         float fadeSpeed = 2f;
         float fadeAmount;
 
-        while (blackSquare.GetComponent<Image>().color.a < 0.75f)
+        while (blackSquare.GetComponent<Image>().color.a < 0.95f)
         {
             fadeAmount = objectColor.a + (fadeSpeed * Time.deltaTime);
 
