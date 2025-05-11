@@ -13,7 +13,9 @@ public class PlayerHUD : MonoBehaviour
     public int powerUpTime;
     public TMPro.TextMeshPro healthText;
     public GameObject blackSquare;
-    public GameObject ValleySpawnPoint;
+    public GameObject gameOverSpawnPoint;
+    public GameObject valleySpawnPoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,8 +63,15 @@ public class PlayerHUD : MonoBehaviour
     void KillPlayer()
     {
         StartCoroutine(FadeBlackOutSquare(true));
-        this.gameObject.transform.position = ValleySpawnPoint.transform.position;
+        this.gameObject.transform.position = gameOverSpawnPoint.transform.position;
         HealPlayer(10);
+        StartCoroutine(FadeBlackOutSquare(false));
+    }
+
+    public void RespawnPlayer()
+    {
+        StartCoroutine(FadeBlackOutSquare(true));
+        this.gameObject.transform.position = valleySpawnPoint.transform.position;
         StartCoroutine(FadeBlackOutSquare(false));
     }
 
