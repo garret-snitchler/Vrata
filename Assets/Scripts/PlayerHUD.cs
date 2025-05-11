@@ -16,6 +16,8 @@ public class PlayerHUD : MonoBehaviour
     public GameObject gameOverSpawnPoint;
     public GameObject valleySpawnPoint;
 
+    private bool killPlayerBool = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,13 +25,12 @@ public class PlayerHUD : MonoBehaviour
         SetHealthText();
     }
 
-    //// Update is called once per frame
     void Update()
     {
-        if (health <= 0)
+        if (health <= 0 && !killPlayerBool)
         {
-            StartCoroutine(FadeBlackOutSquare());
-            Invoke(nameof(KillPlayer), 3);
+            killPlayerBool = true;
+            Invoke(nameof(KillPlayer), 0.5f);
         }
     }
 
@@ -48,7 +49,14 @@ public class PlayerHUD : MonoBehaviour
 
     public void DamagePlayer(int damage)
     {
-        health -= damage;
+        if (health - damage < 0)
+        {
+            health = 0;
+        }
+        else
+        {
+            health -= damage;
+        }
         SetHealthText();
     }
 
@@ -62,10 +70,7 @@ public class PlayerHUD : MonoBehaviour
 
     void KillPlayer()
     {
-        StartCoroutine(FadeBlackOutSquare(true));
-        this.gameObject.transform.position = gameOverSpawnPoint.transform.position;
-        HealPlayer(10);
-        StartCoroutine(FadeBlackOutSquare(false));
+        StartCoroutine(FadeBlackOutSquare(true, true));
     }
 
     public void RespawnPlayer()
@@ -75,13 +80,17 @@ public class PlayerHUD : MonoBehaviour
         StartCoroutine(FadeBlackOutSquare(false));
     }
 
-    public IEnumerator FadeBlackOutSquare(bool fadeToBlack = true, int fadeSpeed = 3)
+    public IEnumerator FadeBlackOutSquare(bool fadeToBlack = true, bool playerKilled = false)
     {
         Color objectColor = blackSquare.GetComponent<Image>().color;
+        float fadeSpeed = 0.5f;
         float fadeAmount;
 
         if (fadeToBlack)
         {
+            print("Start clear to black"); 
+            this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            this.gameObject.GetComponent<MovePlayer>().enabled = false;
             while (blackSquare.GetComponent<Image>().color.a < 1)
             {
                 fadeAmount = objectColor.a + (fadeSpeed * Time.deltaTime);
@@ -92,6 +101,7 @@ public class PlayerHUD : MonoBehaviour
             }
         } else
         {
+            print("start black to clear");
             while (blackSquare.GetComponent<Image>().color.a > 0)
             {
                 fadeAmount = objectColor.a - (fadeSpeed * Time.deltaTime);
@@ -102,5 +112,27 @@ public class PlayerHUD : MonoBehaviour
             }
         }
         yield return new WaitForEndOfFrame();
+
+        if (playerKilled && fadeToBlack)
+        {
+            this.gameObject.transform.position = gameOverSpawnPoint.transform.position;
+            HealPlayer(10);
+        } 
+
+        if (!fadeToBlack)
+        {
+            this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+            this.gameObject.GetComponent<MovePlayer>().enabled = true;
+        }
+
+        yield return new WaitForSeconds(2);
+
+        if (fadeToBlack)
+        {
+            StartCoroutine(FadeBlackOutSquare(false, playerKilled));
+        } else if (playerKilled)
+        {
+            killPlayerBool = false; 
+        }
     }
 }

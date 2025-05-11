@@ -48,9 +48,11 @@ public class UserControllerButtons : MonoBehaviour
     {
         if (HitA.GetStateDown(handTypeR))
         {
+            print("Hi");
             //Hit A once
             if (!portalMode)
             {
+
                 SetPortalMode(true);
                 GameObject worldParent = Instantiate(worldParentPrefab, VRCamera);
                 worldParent.transform.rotation = Quaternion.Euler(0, worldParent.transform.eulerAngles.y, 0);

@@ -31,6 +31,9 @@ TagManager:
   - fireEnemyMinor
   - Gem
   - Button
+  - FireGem
+  - WaterGem
+  - EarthGem
   layers:
   - Default
   - TransparentFX

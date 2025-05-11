@@ -9,33 +9,63 @@ public class audio_Script : MonoBehaviour
     public AudioClip audioClip54;
     public AudioClip audioClip56;
     public AudioClip audioClip59;
+    public AudioClip audioClipDing;
+    public AudioSource AudioSource2;
+    public AudioClip magicInstruction;
     public int Counter = 0;
+    public int FireCounter = 0;
+    public int WaterCounter = 0;
+    public int EarthCounter = 0;
+    public float delay = 5;
 
+    private void Start()
+    {
+    Counter = 0;
+    }
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Gem")
+        if (other.tag == "FireGem")
         {
-
-            if (Counter == 2)
+            if (FireCounter == 0)
             {
                 AudioSource.PlayOneShot(audioClip59);
-                Counter += 1;
+                FireCounter = 1;
             }
+        }
 
-            if (Counter == 1)
+
+        if (other.tag == "WaterGem")
+        {
+            if (WaterCounter == 0)
             {
                 AudioSource.PlayOneShot(audioClip56);
-                Counter += 1;
+                WaterCounter = 1;
             }
+        }
+
+        if (other.tag == "EarthGem")
+        {
+            if (EarthCounter == 0)
+            {
+                AudioSource.PlayOneShot(audioClip54);
+                EarthCounter = 1;
+            }
+        }
+
+
+        if (other.tag =="Gem")
+        {
 
             if (Counter == 0)
             {
-                AudioSource.PlayOneShot(audioClip54);
-                Counter += 1;
+                AudioSource2.clip = magicInstruction;
+                AudioSource2.PlayDelayed(delay);
+                Counter = 1;
             }
         }
 
 
 
-    }
+    
+}
 }

@@ -20,12 +20,14 @@ public class firstLabVoiceLineAudio : MonoBehaviour
     public AudioClip AudioClip30;
     public AudioClip AudioClip38;
     public AudioClip AudioClip49;
+    public AudioClip PortalInfo;
 
 
     private int cloneCounter = 0;
     private int weaponCounter = 0;
     private int practiceCounter = 0;
     private int portalCounter = 0;
+    private int portalInfoCounter = 0;
     private int bossCounter = 0;
     private int minorFireEnemyCounter = 0;
     private int majorFireEnemyCounter = 0;
@@ -158,6 +160,18 @@ public class firstLabVoiceLineAudio : MonoBehaviour
                 AudioSource.PlayOneShot(AudioClip39);
             }
             bombCounter += 1;
+        }
+        if (other.tag == "PortalInfo")
+        {
+            if (portalInfoCounter == 0)
+            {
+                AudioSource.PlayOneShot(PortalInfo);
+            }
+            if (portalInfoCounter == 2)
+            {
+                AudioSource.PlayOneShot(PortalInfo);
+            }
+            swordCounter += 1;
         }
 
     }
