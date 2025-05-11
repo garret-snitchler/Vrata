@@ -76,8 +76,13 @@ public class PlayerHUD : MonoBehaviour
     public void RespawnPlayer()
     {
         StartCoroutine(FadeBlackOutSquare(true));
+        StartCoroutine(DelayRespawn());
+    }
+
+    public IEnumerator DelayRespawn()
+    {
+        yield return new WaitForSeconds(2.5f);
         this.gameObject.transform.position = valleySpawnPoint.transform.position;
-        StartCoroutine(FadeBlackOutSquare(false));
     }
 
     public IEnumerator FadeBlackOutSquare(bool fadeToBlack = true, bool playerKilled = false)
