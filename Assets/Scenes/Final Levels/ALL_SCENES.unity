@@ -4415,8 +4415,8 @@ MonoBehaviour:
   powerUpTime: 10
   healthText: {fileID: 117755124}
   blackSquare: {fileID: 1825479447}
-  gameOverSpawnPoint: {fileID: 0}
-  valleySpawnPoint: {fileID: 0}
+  gameOverSpawnPoint: {fileID: 1347785533}
+  valleySpawnPoint: {fileID: 1585436468}
 --- !u!1001 &157611798
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21686,7 +21686,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 157316388}
         m_TargetAssemblyTypeName: PlayerHUD, Assembly-CSharp
         m_MethodName: RespawnPlayer
         m_Mode: 1
