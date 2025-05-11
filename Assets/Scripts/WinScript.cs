@@ -12,6 +12,7 @@ public class WinScript : MonoBehaviour
 
     private bool win = false;
 
+    // this should only be called when all three gems are collected
     public void InitializeBossFight()
     {
         BossFightPortal.SetActive(true);

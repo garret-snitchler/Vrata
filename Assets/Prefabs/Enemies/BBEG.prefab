@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 7139613852380549937}
   m_Layer: 0
   m_Name: BBEG
-  m_TagString: Boss
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -247,6 +247,8 @@ MonoBehaviour:
   attackRange: 2
   damage: 1
   animator: {fileID: 2894156678023636717}
+  evilClips: []
+  enemySoundSource: {fileID: 0}
 --- !u!195 &6593961158513376120
 NavMeshAgent:
   m_ObjectHideFlags: 0

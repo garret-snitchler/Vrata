@@ -17,7 +17,7 @@ public class DealsDamage : MonoBehaviour
 
     public void OnCollisionEnter(Collision coll)
     {
-        if (coll.gameObject.tag == "Enemy")
+        if (coll.gameObject.tag == "Enemy" || coll.gameObject.tag == "Boss")
         {
             var script = coll.gameObject.GetComponent<Enemy>();
             if (script != null)

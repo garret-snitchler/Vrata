@@ -140,7 +140,7 @@ public class PlayerHUD : MonoBehaviour
         if (playerKilled && fadeToBlack)
         {
             this.gameObject.transform.position = gameOverSpawnPoint.transform.position;
-            HealPlayer(10);
+            HealPlayer(25);
         } 
 
         if (!fadeToBlack)
