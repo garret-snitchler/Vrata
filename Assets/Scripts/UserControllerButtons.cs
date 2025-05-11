@@ -112,11 +112,13 @@ public class UserControllerButtons : MonoBehaviour
         {
             //TeleportingAsset.SetActive(false);
             SnapTurnAsset.SetActive(false);
+            Time.timeScale = 0.1f;
         }
         else
         {
             //TeleportingAsset.SetActive(true);
             SnapTurnAsset.SetActive(true);
+            Time.timeScale = 1.0f;
         }
     }
 
