@@ -308,8 +308,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92f44b8468dff3e4e8a0375091165886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 10
-  powerupDamage: 30
+  baseDamage: 5
+  powerupDamage: 15
   isPoweredUp: 0
 --- !u!1 &4053852058350553162
 GameObject:

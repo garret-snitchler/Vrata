@@ -21,7 +21,7 @@ public class ArrowInteraction : MonoBehaviour
     {
         print(coll.gameObject.name);
         StopPowerup();
-        StartCoroutine(YEET());
+        //StartCoroutine(YEET());
     }
 
     public void SetColor(int co)

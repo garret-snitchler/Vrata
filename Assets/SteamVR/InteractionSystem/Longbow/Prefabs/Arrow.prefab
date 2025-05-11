@@ -1032,8 +1032,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92f44b8468dff3e4e8a0375091165886, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDamage: 5
-  powerupDamage: 15
+  baseDamage: 10
+  powerupDamage: 30
   isPoweredUp: 0
 --- !u!114 &4422878106741936815
 MonoBehaviour:

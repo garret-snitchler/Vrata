@@ -8,12 +8,13 @@ public class WinScript : MonoBehaviour
     public AudioSource audiosource;
     public AudioClip winclip;
     public GameObject BBEG;
+    public GameObject BossFightPortal; 
 
     private bool win = false;
 
     public void InitializeBossFight()
     {
-        BBEG.SetActive(true);
+        BossFightPortal.SetActive(true);
     }
 
     void Update()
