@@ -15,8 +15,13 @@ public class PlayerHUD : MonoBehaviour
     public GameObject blackSquare;
     public GameObject gameOverSpawnPoint;
     public GameObject valleySpawnPoint;
+    public Rigidbody rb; 
+    public AudioClip PlayerDies;
+    public AudioSource VoiceBox;
 
     private bool killPlayerBool = false;
+    private bool isFalling = false;
+    private bool fallingFadeInProgress = false;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +36,20 @@ public class PlayerHUD : MonoBehaviour
         {
             killPlayerBool = true;
             Invoke(nameof(KillPlayer), 0.5f);
+            VoiceBox.PlayOneShot(PlayerDies);
+        }
+
+        if (rb.velocity.y < -1f)
+        {
+            isFalling = true; 
+            if (!fallingFadeInProgress)
+            {
+                fallingFadeInProgress = true;
+                StartCoroutine(Falling()); 
+            }
+        }else
+        {
+            isFalling = false; 
         }
     }
 
@@ -139,5 +158,39 @@ public class PlayerHUD : MonoBehaviour
         {
             killPlayerBool = false; 
         }
+    }
+
+    public IEnumerator Falling()
+    {
+        print("is falling");
+        Color objectColor = blackSquare.GetComponent<Image>().color;
+        float fadeSpeed = 2f;
+        float fadeAmount;
+
+        while (blackSquare.GetComponent<Image>().color.a < 0.95f)
+        {
+            fadeAmount = objectColor.a + (fadeSpeed * Time.deltaTime);
+
+            objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
+            blackSquare.GetComponent<Image>().color = objectColor;
+            yield return null;
+        }
+
+        while (isFalling)
+        {
+            yield return null;
+        }
+
+        while (blackSquare.GetComponent<Image>().color.a > 0)
+        {
+            fadeAmount = objectColor.a - (fadeSpeed * Time.deltaTime);
+
+            objectColor = new Color(objectColor.r, objectColor.g, objectColor.b, fadeAmount);
+            blackSquare.GetComponent<Image>().color = objectColor;
+            yield return null;
+        }
+
+        yield return new WaitForEndOfFrame();
+        fallingFadeInProgress = false; 
     }
 }

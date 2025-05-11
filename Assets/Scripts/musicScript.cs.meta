@@ -5,6 +5,7 @@ MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - AudioSource: {instanceID: 0}
+  - VoiceBoxAudioSource: {instanceID: 0}
   - LabMusic: {fileID: 8300000, guid: 7ceb9d48d14f30d48adf878eb2ac7427, type: 3}
   - EarthMusic: {fileID: 8300000, guid: 2cebef9710bbc634893ed7e02247d1fa, type: 3}
   - FireMusicTop: {fileID: 8300000, guid: 631f3c53e0fe4a7469ea1a83ce915301, type: 3}
@@ -12,6 +13,9 @@ MonoImporter:
   - WaterMusic: {fileID: 8300000, guid: 4cd81290d05ee624985e02fe1a5f3d03, type: 3}
   - BossMusic: {fileID: 8300000, guid: 2dc23088afed41043a6f745880b355b9, type: 3}
   - NatureMusic: {fileID: 8300000, guid: a091acf243181c345920dd90ccbe1363, type: 3}
+  - AudioClip52: {fileID: 8300000, guid: fefcd467497e244bca43a22cb29c9c60, type: 3}
+  - AudioClip17: {fileID: 8300000, guid: bad861d20494c4523b7e060decb39e63, type: 3}
+  - AudioClip10: {fileID: 8300000, guid: 4b8f3f8ea5d56445e9cdb90f018ed071, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

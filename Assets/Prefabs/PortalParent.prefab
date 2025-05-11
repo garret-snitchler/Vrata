@@ -163,6 +163,8 @@ MonoBehaviour:
   VortexBack: {fileID: 2391274781097659411}
   PortalNoise: {fileID: 8300000, guid: e8119ea15a0454fa59a5a06d71c39235, type: 3}
   PortalSource: {fileID: 6712952582790457783}
+  PortalMoveUp: {fileID: 8300000, guid: 566d2ea6240b489479a6e9fd608c2621, type: 3}
+  PortalMoveSide: {fileID: 8300000, guid: 566d2ea6240b489479a6e9fd608c2621, type: 3}
 --- !u!82 &6712952582790457783 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 2025497841495433268, guid: 86b3e70b03eb4dc4eb3ec5660450f3dd, type: 3}
@@ -267,6 +269,8 @@ MonoBehaviour:
   VortexBack: {fileID: 4545194319676612275}
   PortalNoise: {fileID: 8300000, guid: e8119ea15a0454fa59a5a06d71c39235, type: 3}
   PortalSource: {fileID: 4833900987370158871}
+  PortalMoveUp: {fileID: 8300000, guid: 566d2ea6240b489479a6e9fd608c2621, type: 3}
+  PortalMoveSide: {fileID: 8300000, guid: 566d2ea6240b489479a6e9fd608c2621, type: 3}
 --- !u!4 &3755741681101661001 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7716469296767776874, guid: 86b3e70b03eb4dc4eb3ec5660450f3dd, type: 3}
