@@ -4467,6 +4467,7 @@ MonoBehaviour:
   blackSquare: {fileID: 1825479447}
   gameOverSpawnPoint: {fileID: 1347785533}
   valleySpawnPoint: {fileID: 1585436468}
+  rb: {fileID: 157316383}
   PlayerDies: {fileID: 0}
   VoiceBox: {fileID: 0}
 --- !u!1001 &157611798
