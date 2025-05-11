@@ -9,7 +9,8 @@ public class BigBoss : MonoBehaviour
     public GameObject gemPrefab;
     public Transform gemSpawnPoint;
     public int levelNum;
-    public WeaponHandler weaponHandlerScript; 
+    public WeaponHandler weaponHandlerScript;
+    public Collider enemyCollider; 
 
     void Update()
     {
@@ -22,6 +23,7 @@ public class BigBoss : MonoBehaviour
             gem.transform.SetParent(gemSpawnPoint);
             gem.transform.SetParent(null);
             weaponHandlerScript.gemsUnlocked[levelNum] = true;
+            enemyCollider.enabled = false; 
         }
     }
 }

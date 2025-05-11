@@ -332,7 +332,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4536465056800941815, guid: 9df7bf41b8e9823488f7c5518c522156, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -2515936793419378698, guid: 9df7bf41b8e9823488f7c5518c522156, type: 3}
@@ -1236,6 +1236,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurtleEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3507973886355386243, guid: 1ff3d38f9a59d5a4c831877b4ce98279, type: 3}
+      propertyPath: playerHead
+      value: 
+      objectReference: {fileID: 2058639116}
     - target: {fileID: 8589531993619890418, guid: 1ff3d38f9a59d5a4c831877b4ce98279, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -2580,6 +2584,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoulderEnemy (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3507973886355386243, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
+      propertyPath: playerHead
+      value: 
+      objectReference: {fileID: 2058639116}
     - target: {fileID: 8589531993619890418, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5555556
@@ -3656,6 +3664,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoulderEnemy (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 3507973886355386243, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
+      propertyPath: playerHead
+      value: 
+      objectReference: {fileID: 2058639116}
     - target: {fileID: 8589531993619890418, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5555556
@@ -4798,6 +4810,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoulderEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3507973886355386243, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
+      propertyPath: playerHead
+      value: 
+      objectReference: {fileID: 2058639116}
     - target: {fileID: 8589531993619890418, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5555556
@@ -18063,7 +18079,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4536465056800941815, guid: 04e173bb5b11b1b41a4b4c5d8b1ff907, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -2515936793419378698, guid: 04e173bb5b11b1b41a4b4c5d8b1ff907, type: 3}
@@ -19044,6 +19060,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoulderEnemy (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 3507973886355386243, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
+      propertyPath: playerHead
+      value: 
+      objectReference: {fileID: 2058639116}
     - target: {fileID: 8589531993619890418, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5555556
@@ -19958,6 +19978,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurtleEnemy (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3507973886355386243, guid: 1ff3d38f9a59d5a4c831877b4ce98279, type: 3}
+      propertyPath: playerHead
+      value: 
+      objectReference: {fileID: 2058639116}
     - target: {fileID: 8589531993619890418, guid: 1ff3d38f9a59d5a4c831877b4ce98279, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -34998,6 +35022,12 @@ MonoBehaviour:
   gemSpawnPoint: {fileID: 773720130}
   levelNum: 0
   weaponHandlerScript: {fileID: 434499344}
+  enemyCollider: {fileID: 1391304625}
+--- !u!136 &1391304625 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 174183795817997668, guid: 4c61c13377079454f8b6a18e0fe1696a, type: 3}
+  m_PrefabInstance: {fileID: 633459704}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1392330198
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39239,6 +39269,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoulderEnemy (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 3507973886355386243, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
+      propertyPath: playerHead
+      value: 
+      objectReference: {fileID: 2058639116}
     - target: {fileID: 8589531993619890418, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5555556
@@ -39969,6 +40003,12 @@ MonoBehaviour:
   gemSpawnPoint: {fileID: 773720130}
   levelNum: 2
   weaponHandlerScript: {fileID: 434499344}
+  enemyCollider: {fileID: 1568106754}
+--- !u!65 &1568106754 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 6939882036092648206, guid: aea3d6ae8eebe6848842be84b78474e6, type: 3}
+  m_PrefabInstance: {fileID: 393796773}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1574987974
 GameObject:
   m_ObjectHideFlags: 0
@@ -41885,6 +41925,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigBoulderBoss
       objectReference: {fileID: 0}
+    - target: {fileID: 3507973886355386243, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
+      propertyPath: damage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507973886355386243, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
+      propertyPath: playerHead
+      value: 
+      objectReference: {fileID: 2058639116}
+    - target: {fileID: 3507973886355386243, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
+      propertyPath: sightRange
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507973886355386243, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
+      propertyPath: attackRange
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507973886355386243, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
+      propertyPath: walkPointRange
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3507973886355386243, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
+      propertyPath: timeBetweenAttacks
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8589531993619890418, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
       propertyPath: m_LocalScale.x
       value: 2.777778
@@ -41944,6 +42008,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2155053588245266890, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2030036012}
+    - targetCorrespondingSourceObject: {fileID: 2155053588245266890, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2030036019}
   m_SourcePrefab: {fileID: 100100000, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
 --- !u!1001 &1622346862
 PrefabInstance:
@@ -45059,6 +45126,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TurtleEnemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3507973886355386243, guid: 1ff3d38f9a59d5a4c831877b4ce98279, type: 3}
+      propertyPath: playerHead
+      value: 
+      objectReference: {fileID: 2058639116}
     - target: {fileID: 8589531993619890418, guid: 1ff3d38f9a59d5a4c831877b4ce98279, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -48482,6 +48553,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoulderEnemy (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3507973886355386243, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
+      propertyPath: playerHead
+      value: 
+      objectReference: {fileID: 2058639116}
     - target: {fileID: 8589531993619890418, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5555556
@@ -50487,6 +50562,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BoulderEnemy (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 3507973886355386243, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
+      propertyPath: playerHead
+      value: 
+      objectReference: {fileID: 2058639116}
     - target: {fileID: 8589531993619890418, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5555556
@@ -51813,19 +51892,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8589531993619890418, guid: 59b49eabee169f246bbadf9b961f5f7e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.24776077
+      value: -1.8048439
       objectReference: {fileID: 0}
     - target: {fileID: 8589531993619890418, guid: 59b49eabee169f246bbadf9b961f5f7e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -17.01138
+      value: -17.473
       objectReference: {fileID: 0}
     - target: {fileID: 8589531993619890418, guid: 59b49eabee169f246bbadf9b961f5f7e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -21.814808
+      value: -17.4314
       objectReference: {fileID: 0}
     - target: {fileID: 8589531993619890418, guid: 59b49eabee169f246bbadf9b961f5f7e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.6791193
       objectReference: {fileID: 0}
     - target: {fileID: 8589531993619890418, guid: 59b49eabee169f246bbadf9b961f5f7e, type: 3}
       propertyPath: m_LocalRotation.x
@@ -51833,7 +51912,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8589531993619890418, guid: 59b49eabee169f246bbadf9b961f5f7e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.734028
       objectReference: {fileID: 0}
     - target: {fileID: 8589531993619890418, guid: 59b49eabee169f246bbadf9b961f5f7e, type: 3}
       propertyPath: m_LocalRotation.z
@@ -51845,7 +51924,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8589531993619890418, guid: 59b49eabee169f246bbadf9b961f5f7e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 94.45
       objectReference: {fileID: 0}
     - target: {fileID: 8589531993619890418, guid: 59b49eabee169f246bbadf9b961f5f7e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -52889,6 +52968,7 @@ MonoBehaviour:
   gemSpawnPoint: {fileID: 773720130}
   levelNum: 1
   weaponHandlerScript: {fileID: 434499344}
+  enemyCollider: {fileID: 2030036022}
 --- !u!114 &2030036015 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3507973886355386243, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
@@ -52900,6 +52980,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a42f9e12bbc30fb4da3100a07bea3292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2030036019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2030036010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63b6bdd541761c84e9588f8dacd0e417, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyScript: {fileID: 2030036015}
+--- !u!136 &2030036022 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 174183795817997668, guid: 67f9e204b63a898469e2b0da72821017, type: 3}
+  m_PrefabInstance: {fileID: 1620493360}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2031355633
 PrefabInstance:
   m_ObjectHideFlags: 0

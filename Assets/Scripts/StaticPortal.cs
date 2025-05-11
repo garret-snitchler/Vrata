@@ -20,11 +20,10 @@ public class StaticPortal : MonoBehaviour
             GameObject player = GameObject.Find("Player");
             if (otherPortal != null && player != null)
             {
-                player.transform.position = otherPortal.transform.position;
-                //player.transform.rotation = otherPortal.transform.rotation;
-                gameObject.tag = "Portalled";
+                StartCoroutine(player.GetComponent<PlayerHUD>().FadeBlackOutSquare(true));
+                StartCoroutine(WaitThreeThenPortal(gameObject, player));
             }
-            StartCoroutine(waitThreeThenResetTag(gameObject));
+            StartCoroutine(waitSixThenResetTag(gameObject));
         }
     }
 
@@ -33,13 +32,20 @@ public class StaticPortal : MonoBehaviour
         if (collider.gameObject.tag == "Portalled")
         {
             // give player time to step out of portal
-            StartCoroutine(waitThreeThenResetTag(collider.gameObject));
+            StartCoroutine(waitSixThenResetTag(collider.gameObject));
         }
     }
 
-    private IEnumerator waitThreeThenResetTag(GameObject gameObject)
+    private IEnumerator WaitThreeThenPortal(GameObject gameObject, GameObject player)
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2.5f); //wait for fade to black
+        player.transform.position = otherPortal.transform.position;
+        gameObject.tag = "Portalled";
+    }
+
+    private IEnumerator waitSixThenResetTag(GameObject gameObject)
+    {
+        yield return new WaitForSeconds(5); //wait for fade to black + exit time
         gameObject.tag = "Player";
 
         int count = weaponHandlerScript != null ? weaponHandlerScript.NumGemsUnlocked() : 0; 
