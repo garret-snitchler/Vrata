@@ -122,6 +122,12 @@ MonoBehaviour:
   attackRange: 2
   damage: 1
   animator: {fileID: 5980032024913733533}
+  randoEnemyClips:
+  - {fileID: 8300000, guid: 609c328e9216b294c95d38c1dc63afc0, type: 3}
+  - {fileID: 8300000, guid: d3734b1a85dc62a498b9ff9dbc98e397, type: 3}
+  - {fileID: 8300000, guid: d96c58cbeb713ec45b0c644516288c9b, type: 3}
+  - {fileID: 8300000, guid: 8075e542517012e4bb377f3b6713a502, type: 3}
+  - {fileID: 8300000, guid: 582e8d4c95f8a814caa5c1757d0f2206, type: 3}
 --- !u!195 &6593961158513376120
 NavMeshAgent:
   m_ObjectHideFlags: 0

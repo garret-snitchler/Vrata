@@ -18,8 +18,8 @@ public class Enemy : MonoBehaviour
     //public ParticleSystem hitEffect;
 
     //Liv added
-    public AudioClip[] evilClips;
-    public AudioSource enemySoundSource;
+    [SerializeField] AudioClip[] randoEnemyClips;
+    AudioSource enemySoundSource;
 
     private Vector3 walkPoint;
     private bool walkPointSet;
@@ -31,6 +31,8 @@ public class Enemy : MonoBehaviour
         animator = GetComponentInChildren<Animator>();
         playerHead = GameObject.Find("HeadCollider").transform;
         navAgent = GetComponent<NavMeshAgent>();
+        //Liv added
+        enemySoundSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -55,7 +57,11 @@ public class Enemy : MonoBehaviour
             ChasePlayer();
         }
     }
-
+    private void RandomizeEnemySound()
+    {
+        AudioClip clip = randoEnemyClips[Random.Range(0, randoEnemyClips.Length)];
+        enemySoundSource.PlayOneShot(clip);
+    }
     private void Patroling()
     {
         if (!walkPointSet)
@@ -161,6 +167,9 @@ public class Enemy : MonoBehaviour
     {
         animator.SetBool("Dead", true);
         yield return new WaitForSeconds(1.8f);
+        //Liv Added
+        Invoke("RandomizeEnemySound", 0);
+        // just that line
         this.gameObject.GetComponent<Enemy>().enabled = false;
         this.gameObject.GetComponent<NavMeshAgent>().speed = 0;
         this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
@@ -173,9 +182,12 @@ public class Enemy : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
     }
+<<<<<<< Updated upstream
 
     private void RandomizeEnemySound()
     {
         
     }
+=======
+>>>>>>> Stashed changes
 }
