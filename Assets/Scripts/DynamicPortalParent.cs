@@ -16,6 +16,9 @@ public class DynamicPortalParent : MonoBehaviour
     public DynamicPortal leftPortalScript;
     public DynamicPortal rightPortalScript;
 
+    public AudioClip PortalClose;
+    public AudioSource PortalCloseAudioSource;
+
     private bool isOneTimeUse = true; 
 
     public void GetObjects()
@@ -74,6 +77,7 @@ public class DynamicPortalParent : MonoBehaviour
 
     public void OneTimeUsed()
     {
+        PortalCloseAudioSource.PlayOneShot(PortalClose);
         Destroy(this.gameObject); 
     }
 

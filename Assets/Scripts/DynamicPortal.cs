@@ -9,10 +9,16 @@ public class DynamicPortal : MonoBehaviour
 {
     public DynamicPortalParent parentScript;
 
+    public GameObject VortexFront;
+    public GameObject VortexBack;
+    public AudioClip PortalNoise;
+    public AudioSource PortalSource;
+
     private bool isOneTime = true;
     private bool isActive = false;
     private Rigidbody rigidbody;
     private Hand hand; 
+
 
     public void Awake()
     {
@@ -33,6 +39,9 @@ public class DynamicPortal : MonoBehaviour
     public void Activate()
     {
         isActive = true;
+        PortalSource.PlayOneShot(PortalNoise);
+        VortexFront.SetActive(true);
+        VortexBack.SetActive(true);
     }
 
     public void Move(Vector2 movement, bool isVertical)
