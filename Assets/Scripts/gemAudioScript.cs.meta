@@ -8,6 +8,9 @@ MonoImporter:
   - audioClip54: {fileID: 8300000, guid: 3352a9460c9fc4ab0b7a84cebc30113c, type: 3}
   - audioClip56: {fileID: 8300000, guid: 0df1df6b0a03c4de4b2ecacae428821c, type: 3}
   - audioClip59: {fileID: 8300000, guid: b908d0df76e18480c94255b3819253d2, type: 3}
+  - audioClipDing: {fileID: 8300000, guid: b6f0b3acb689af54c844cb1d77be3346, type: 3}
+  - AudioSource2: {instanceID: 0}
+  - magicInstruction: {fileID: 8300000, guid: 1a60710b9e36b4941b79afc48879cedb, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
