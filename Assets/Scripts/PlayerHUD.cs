@@ -15,6 +15,8 @@ public class PlayerHUD : MonoBehaviour
     public GameObject blackSquare;
     public GameObject ValleySpawnPoint;
 
+    private bool killPlayerBool = false;
+
     void Start()
     {
         health = maxHealth;
@@ -23,9 +25,10 @@ public class PlayerHUD : MonoBehaviour
 
     void Update()
     {
-        if (health <= 0)
+        if (health <= 0 && !killPlayerBool)
         {
-            Invoke(nameof(KillPlayer), 3);
+            killPlayerBool = true;
+            Invoke(nameof(KillPlayer), 0.5f);
         }
     }
 
@@ -44,7 +47,14 @@ public class PlayerHUD : MonoBehaviour
 
     public void DamagePlayer(int damage)
     {
-        health -= damage;
+        if (health - damage < 0)
+        {
+            health = 0;
+        }
+        else
+        {
+            health -= damage;
+        }
         SetHealthText();
     }
 
@@ -69,8 +79,9 @@ public class PlayerHUD : MonoBehaviour
 
         if (fadeToBlack)
         {
+            print("Start clear to black"); 
             this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-            blackSquare.SetActive(true);
+            this.gameObject.GetComponent<MovePlayer>().enabled = false;
             while (blackSquare.GetComponent<Image>().color.a < 1)
             {
                 fadeAmount = objectColor.a + (fadeSpeed * Time.deltaTime);
@@ -81,6 +92,7 @@ public class PlayerHUD : MonoBehaviour
             }
         } else
         {
+            print("start black to clear");
             while (blackSquare.GetComponent<Image>().color.a > 0)
             {
                 fadeAmount = objectColor.a - (fadeSpeed * Time.deltaTime);
@@ -89,7 +101,6 @@ public class PlayerHUD : MonoBehaviour
                 blackSquare.GetComponent<Image>().color = objectColor;
                 yield return null;
             }
-            blackSquare.SetActive(false);
         }
         yield return new WaitForEndOfFrame();
 
@@ -102,9 +113,17 @@ public class PlayerHUD : MonoBehaviour
         if (!fadeToBlack)
         {
             this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+            this.gameObject.GetComponent<MovePlayer>().enabled = true;
         }
 
         yield return new WaitForSeconds(2);
-        StartCoroutine(FadeBlackOutSquare(false, playerKilled));
+
+        if (fadeToBlack)
+        {
+            StartCoroutine(FadeBlackOutSquare(false, playerKilled));
+        } else if (playerKilled)
+        {
+            killPlayerBool = false; 
+        }
     }
 }
