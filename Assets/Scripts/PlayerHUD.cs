@@ -16,6 +16,9 @@ public class PlayerHUD : MonoBehaviour
     public GameObject gameOverSpawnPoint;
     public GameObject valleySpawnPoint;
 
+    public AudioClip PlayerDies;
+    public AudioSource VoiceBox;
+
     private bool killPlayerBool = false;
 
     // Start is called before the first frame update
@@ -31,6 +34,8 @@ public class PlayerHUD : MonoBehaviour
         {
             killPlayerBool = true;
             Invoke(nameof(KillPlayer), 0.5f);
+            VoiceBox.PlayOneShot(PlayerDies);
+
         }
     }
 

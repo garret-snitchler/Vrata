@@ -46,8 +46,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
+  m_Volume: 0.799
+  m_Pitch: 0.82
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -210,7 +210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1578178595691352886, guid: 6b53a2e5595596545ac901aa53d2b794, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2219137846580121862, guid: 6b53a2e5595596545ac901aa53d2b794, type: 3}
       propertyPath: m_LocalPosition.x
