@@ -8,7 +8,8 @@ public class WinScript : MonoBehaviour
     public AudioSource audiosource;
     public AudioClip winclip;
     public GameObject BBEG;
-    public GameObject BossFightPortal; 
+    public GameObject BossFightPortal;
+    public GameObject creditsPortal;
 
     private bool win = false;
 
@@ -25,6 +26,7 @@ public class WinScript : MonoBehaviour
             win = true;
             audiosource.clip = winclip;
             audiosource.Play();
+            creditsPortal.SetActive(true);
         }
     }
 }

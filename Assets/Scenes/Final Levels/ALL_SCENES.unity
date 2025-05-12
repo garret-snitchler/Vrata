@@ -15315,6 +15315,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PortalSeven
       objectReference: {fileID: 0}
+    - target: {fileID: 271956597385269691, guid: 3ec36dbb3d371684590d464915fafde2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 616429894184291073, guid: 3ec36dbb3d371684590d464915fafde2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 31.310715
@@ -16348,6 +16352,11 @@ Transform:
   - {fileID: 1305734042}
   m_Father: {fileID: 519747451}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &620102855 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 271956597385269691, guid: 3ec36dbb3d371684590d464915fafde2, type: 3}
+  m_PrefabInstance: {fileID: 552804987}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &620604832
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25025,6 +25034,7 @@ MonoBehaviour:
   winclip: {fileID: 8300000, guid: 9150105acee8b42c582993881469d060, type: 3}
   BBEG: {fileID: 1225397081}
   BossFightPortal: {fileID: 509793321890355103}
+  creditsPortal: {fileID: 620102855}
 --- !u!4 &927168111
 Transform:
   m_ObjectHideFlags: 0
@@ -61635,6 +61645,10 @@ PrefabInstance:
     - target: {fileID: 4433665390613118338, guid: 713649f8c6cb4c9418a0e2a77981a12b, type: 3}
       propertyPath: m_Name
       value: PortalFour
+      objectReference: {fileID: 0}
+    - target: {fileID: 4433665390613118338, guid: 713649f8c6cb4c9418a0e2a77981a12b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5980699619619431502, guid: 713649f8c6cb4c9418a0e2a77981a12b, type: 3}
       propertyPath: m_LocalPosition.x
