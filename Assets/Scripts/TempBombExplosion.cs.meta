@@ -3,7 +3,9 @@ guid: a3d0863f46c315f4c9784d5ef4191b2d
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - boomSource: {instanceID: 0}
+  - boomClip: {fileID: 8300000, guid: d5677f76433e8514bbb5a02bf991111b, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

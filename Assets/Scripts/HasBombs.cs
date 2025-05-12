@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HasBombs : MonoBehaviour
 {
+
     void Awake()
     {
         GameObject.Find("Bomb Handler").GetComponent<BoomSpawner>().enabled = true; 
