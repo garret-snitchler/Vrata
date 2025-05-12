@@ -108,7 +108,6 @@ public class PlayerHUD : MonoBehaviour
     public IEnumerator FadeBlackOutSquare(bool fadeToBlack = true, bool playerKilled = false, bool credits = false)
     {
         Color objectColor = blackSquare.GetComponent<Image>().color;
-        Color creditsColor = creditsText.GetComponent<TMPro.TextMeshPro>().color;
         float fadeSpeed = 0.5f;
         float fadeAmount;
 
@@ -125,21 +124,11 @@ public class PlayerHUD : MonoBehaviour
                 blackSquare.GetComponent<Image>().color = objectColor;
                 yield return null;
             }
+            // enable the credits text
             if (credits)
             {
                 healthText.gameObject.SetActive(false);
-                while (creditsText.GetComponent<TMPro.TextMeshPro>().color.a < 1)
-                {
-                    fadeAmount = creditsColor.a + (fadeSpeed * Time.deltaTime);
-
-                    creditsColor = new Color(creditsColor.r, creditsColor.g, creditsColor.b, fadeAmount);
-                    creditsText.GetComponent<TMPro.TextMeshPro>().color = creditsColor;
-                    yield return null;
-                }
-
-                print("Starting credits");
                 creditsText.gameObject.SetActive(true);
-                // enable the credits text
             }
         } else
         {
