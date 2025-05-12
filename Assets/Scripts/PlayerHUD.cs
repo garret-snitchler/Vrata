@@ -11,9 +11,10 @@ public class PlayerHUD : MonoBehaviour
     public int maxHealth;
     private int health;
     public int powerUpTime;
-    public TMPro.TextMeshPro healthText;
+    //public TMPro.TextMeshPro healthText;
     public TMPro.TextMeshPro creditsText;
     public GameObject blackSquare;
+    public GameObject bloodImage;
     public GameObject gameOverSpawnPoint;
     public GameObject valleySpawnPoint;
     public Rigidbody rb; 
@@ -28,7 +29,7 @@ public class PlayerHUD : MonoBehaviour
     void Start()
     {
         health = maxHealth;
-        SetHealthText();
+        //SetHealthText();
     }
 
     void Update()
@@ -64,7 +65,8 @@ public class PlayerHUD : MonoBehaviour
         {
             health += heal;
         }
-        SetHealthText();
+        // currently no visual feedback on healing
+        //SetHealthText();
     }
 
     public void DamagePlayer(int damage)
@@ -77,16 +79,25 @@ public class PlayerHUD : MonoBehaviour
         {
             health -= damage;
         }
-        SetHealthText();
+        StartCoroutine(DisplayDamage());
     }
 
-    void SetHealthText()
+    IEnumerator DisplayDamage()
     {
-        if (healthText != null)
-        {
-            healthText.text = "Health: " + health.ToString();
-        }
+        yield return new WaitForSeconds(1);
+        bloodImage.gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        bloodImage.gameObject.SetActive(false);
+
     }
+
+    //void SetHealthText()
+    //{
+    //    if (healthText != null)
+    //    {
+    //        healthText.text = "Health: " + health.ToString();
+    //    }
+    //}
 
     void KillPlayer()
     {
@@ -127,7 +138,7 @@ public class PlayerHUD : MonoBehaviour
             // enable the credits text
             if (credits)
             {
-                healthText.gameObject.SetActive(false);
+                //healthText.gameObject.SetActive(false);
                 creditsText.gameObject.SetActive(true);
             }
         } else
