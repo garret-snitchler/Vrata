@@ -182,12 +182,4 @@ public class Enemy : MonoBehaviour
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, sightRange);
     }
-<<<<<<< Updated upstream
-
-    private void RandomizeEnemySound()
-    {
-        
-    }
-=======
->>>>>>> Stashed changes
 }
