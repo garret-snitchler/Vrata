@@ -5000,9 +5000,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4517350799680228932}
   serializedVersion: 4
-  m_Mass: 0.5
+  m_Mass: 0.1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -5215,7 +5215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3d0863f46c315f4c9784d5ef4191b2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boomSource: {fileID: 0}
+  boomSource: {fileID: -5004175659563918826}
   boomClip: {fileID: 8300000, guid: d5677f76433e8514bbb5a02bf991111b, type: 3}
 --- !u!114 &8680070479817584451
 MonoBehaviour:

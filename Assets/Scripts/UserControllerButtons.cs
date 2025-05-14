@@ -84,6 +84,7 @@ public class UserControllerButtons : MonoBehaviour
         } else if (DoubleClickA.GetStateDown(handTypeR))
         {
             //Double click A
+            parentPortal.GetComponent<DynamicPortalParent>().ClosePortal(); 
             SetPortalMode(false);
             Destroy(parentPortal.transform.parent.gameObject);
         } else if (portalMode && LeftTrigger.GetState(handTypeL)) {

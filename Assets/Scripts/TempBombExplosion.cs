@@ -9,9 +9,10 @@ public class TempBombExplosion : MonoBehaviour
     public AudioClip boomClip;
     public void OnCollisionEnter(Collision coll)
     {
-        if (coll.gameObject.tag == "Enemy")
+        if (coll.gameObject.tag == "Enemy" || coll.gameObject.tag == "Boss")
         {
             this.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            this.gameObject.transform.SetParent(coll.gameObject.transform);
             this.gameObject.transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
             boomSource = GetComponent<AudioSource>();
             StartCoroutine(Kaboom());

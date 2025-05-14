@@ -19,7 +19,8 @@ public class DynamicPortal : MonoBehaviour
     private bool isOneTime = true;
     private bool isActive = false;
     private Rigidbody rigidbody;
-    private Hand hand; 
+    private Hand hand;
+    private bool isMakingSound = false; 
 
 
     public void Awake()
@@ -48,6 +49,9 @@ public class DynamicPortal : MonoBehaviour
 
     public void Move(Vector2 movement, bool isVertical)
     {
+        print(movement);
+        movement *= 150; 
+
         if (movement == Vector2.zero)
         {
             this.rigidbody.velocity = movement;
@@ -56,13 +60,29 @@ public class DynamicPortal : MonoBehaviour
         {
             print("is vertical"); 
             rigidbody.AddRelativeForce(new Vector3(0, movement.y, 0));
-            PortalSource.PlayOneShot(PortalMoveUp);
+            if (!isMakingSound)
+            {
+                isMakingSound = true;
+                PortalSource.PlayOneShot(PortalMoveUp);
+                StartCoroutine(WaitAndReset()); 
+            }
         }
         else
         {
             rigidbody.AddRelativeForce(new Vector3(-movement.y, 0, movement.x));
-            PortalSource.PlayOneShot(PortalMoveSide);
+            if (!isMakingSound)
+            {
+                isMakingSound = true;
+                PortalSource.PlayOneShot(PortalMoveSide);
+                StartCoroutine(WaitAndReset());
+            }
         }
+    }
+
+    private IEnumerator WaitAndReset()
+    {
+        yield return new WaitForSeconds(2.5f);
+        isMakingSound = false;
     }
 
     public void Rotate(Vector2 joystickMovement)

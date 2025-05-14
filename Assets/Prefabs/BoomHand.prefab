@@ -205,8 +205,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 400276}
-  - component: {fileID: 11447524}
-  - component: {fileID: 11426438}
   - component: {fileID: 11443248}
   - component: {fileID: 11405654}
   - component: {fileID: 114000011899610526}
@@ -237,39 +235,6 @@ Transform:
   - {fileID: 453242}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &11447524
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 187848}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d85480da87762944399dab6c99985eef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  arrowPrefab: {fileID: 4517350799680228932, guid: b92a88557eb8eb043ac30c63f99d7dc8, type: 3}
-  arrowNockTransform: {fileID: 413922}
-  nockDistance: 0.1
-  lerpCompleteDistance: 0.08
-  rotationLerpThreshold: 0.15
-  positionLerpThreshold: 0.15
-  arrowSpawnSound: {fileID: 11498220}
-  maxArrowCount: 10
---- !u!114 &11426438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 187848}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57468e6cbae21894fa42c90413c294ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemPackage: {fileID: 11450054, guid: 98a3ad29136d5c04f8a025adf1cbd704, type: 3}
 --- !u!114 &11443248
 MonoBehaviour:
   m_ObjectHideFlags: 0

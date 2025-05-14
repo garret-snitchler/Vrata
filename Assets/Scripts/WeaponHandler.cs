@@ -129,22 +129,30 @@ public class WeaponHandler : MonoBehaviour
 
     public void DisablePowerup()
     {
-        switch (currentWeapon)
+        try
         {
-            case Weapon.Sword:
-                currentWeaponObj.GetComponent<SwordInteraction>().StopPowerup();
-                break;
-            case Weapon.Longbow:
-                GetArrow().GetComponent<ArrowInteraction>().StopPowerup();
-                break;
-            case Weapon.Boom:
-                currentWeaponObj.GetComponent<BoomSpawner>().StopPowerup();
-                break;
-            default:
-                break;
+            switch (currentWeapon)
+            {
+                case Weapon.Sword:
+                    currentWeaponObj.GetComponent<SwordInteraction>().StopPowerup();
+                    break;
+                case Weapon.Longbow:
+                    GetArrow().GetComponent<ArrowInteraction>().StopPowerup();
+                    break;
+                case Weapon.Boom:
+                    currentWeaponObj.GetComponent<BoomSpawner>().StopPowerup();
+                    break;
+                default:
+                    break;
+            }
+        } catch
+        {
+            print("something wrong in disable powerup");
+        } finally
+        {
+            print("powerupAvailable");
+            powerupAvailable = true;
         }
-        print("powerupAvailable"); 
-        powerupAvailable = true;
     }
 
     private GameObject GetArrow()

@@ -208,6 +208,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PortalParent
       objectReference: {fileID: 0}
+    - target: {fileID: 1391682361736686618, guid: 6b53a2e5595596545ac901aa53d2b794, type: 3}
+      propertyPath: PortalMoveUp
+      value: 
+      objectReference: {fileID: 8300000, guid: 4e2e74504a83fbd438147cfda37cf3d0, type: 3}
     - target: {fileID: 1578178595691352886, guid: 6b53a2e5595596545ac901aa53d2b794, type: 3}
       propertyPath: m_IsActive
       value: 1

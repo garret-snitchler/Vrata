@@ -19,14 +19,14 @@ public class DynamicPortalParent : MonoBehaviour
     public AudioClip PortalClose;
     public AudioSource PortalCloseAudioSource;
 
-    private bool isOneTimeUse = true; 
+    private bool isOneTimeUse = true;
 
     public void GetObjects()
     {
         this.leftPortal = this.gameObject.transform.GetChild(0).gameObject;
         this.rightPortal = this.gameObject.transform.GetChild(1).gameObject;
         this.leftPortalScript = leftPortal.GetComponent<DynamicPortal>();
-        this.leftPortalScript.SetInput(true); 
+        this.leftPortalScript.SetInput(true);
         this.rightPortalScript = rightPortal.GetComponent<DynamicPortal>();
         this.rightPortalScript.SetInput(false);
         SetPortalType(true);
@@ -72,18 +72,24 @@ public class DynamicPortalParent : MonoBehaviour
     {
         if (child == leftPortal) return rightPortal;
         if (child == rightPortal) return leftPortal;
-        return null; 
+        return null;
     }
 
     public void OneTimeUsed()
     {
         PortalCloseAudioSource.PlayOneShot(PortalClose);
-        Destroy(this.gameObject); 
+        Destroy(this.gameObject);
     }
 
     IEnumerator Open15Seconds()
     {
         yield return new WaitForSeconds(15);
-        Destroy(this.gameObject); 
+        PortalCloseAudioSource.PlayOneShot(PortalClose);
+        Destroy(this.gameObject);
+    }
+
+    public void ClosePortal()
+    {
+        PortalCloseAudioSource.PlayOneShot(PortalClose);
     }
 }
