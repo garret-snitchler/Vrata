@@ -27,26 +27,15 @@ public class StaticPortal : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider collider)
-    {
-        if (collider.gameObject.tag == "Portalled")
-        {
-            // give player time to step out of portal
-            StartCoroutine(waitSixThenResetTag(collider.gameObject));
-        }
-    }
-
     private IEnumerator WaitThreeThenPortal(GameObject gameObject, GameObject player)
     {
         yield return new WaitForSeconds(2.5f); //wait for fade to black
         player.transform.position = otherPortal.transform.position;
-        gameObject.tag = "Portalled";
     }
 
     private IEnumerator waitSixThenResetTag(GameObject gameObject)
     {
         yield return new WaitForSeconds(5); //wait for fade to black + exit time
-        gameObject.tag = "Player";
 
         int count = weaponHandlerScript != null ? weaponHandlerScript.NumGemsUnlocked() : 0; 
         if (otherPortal.name == "Spawn Point - Valley" && count == 3)

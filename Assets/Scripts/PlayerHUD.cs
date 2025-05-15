@@ -25,6 +25,8 @@ public class PlayerHUD : MonoBehaviour
     private bool isFalling = false;
     private bool fallingFadeInProgress = false;
 
+    private float slowHealthRegenerate = 0; 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +43,7 @@ public class PlayerHUD : MonoBehaviour
             VoiceBox.PlayOneShot(PlayerDies);
         }
 
-        if (rb.velocity.y < -1f)
+        if (rb.velocity.y < -5f)
         {
             isFalling = true; 
             if (!fallingFadeInProgress)
@@ -52,6 +54,14 @@ public class PlayerHUD : MonoBehaviour
         }else
         {
             isFalling = false; 
+        }
+
+        slowHealthRegenerate += Time.deltaTime;
+        if (slowHealthRegenerate >= 5)
+        {
+            HealPlayer(1);
+            print("heal player 1");
+            slowHealthRegenerate = 0;
         }
     }
 
