@@ -12368,7 +12368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GemsUnlocked: 0
-  gemsUnlocked: 010101
+  gemsUnlocked: 000000
   powerupNotAvailable: {fileID: 807889960}
 --- !u!4 &434499345
 Transform:
